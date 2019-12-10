@@ -1,0 +1,19 @@
+.greeting{
+    display: flex;
+}
+.greeting-list{
+    display: flex;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+#nav-link{
+    float: left;
+}
+.logo{
+    font-family: 'Black Rose', arial;
+    color: rgb(228, 151, 63);
+    text-decoration: none;
+    font-size: 80px;
+    padding: 0px;
+}
