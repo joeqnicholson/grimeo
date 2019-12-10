@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-export default ({ currentUser, logoutUser }) => {
+export default ({ currentUser, logoutUser, openModal }) => {
   // debugger; // check props
   const display = currentUser ? (
     
@@ -9,8 +9,8 @@ export default ({ currentUser, logoutUser }) => {
     
   ) : (
     <div>
-      <Link to="/signup">Join</Link>
-      <Link to="/login">Log In</Link>
+       <button onClick={() => openModal('login')}>Login</button>
+       <button onClick={() => openModal('signup')}>Signup</button>
     </div>
   );
 
@@ -19,9 +19,7 @@ export default ({ currentUser, logoutUser }) => {
       <div class="logo">
           <Link>grimeo</Link>
       </div>
-      {/* <ul class='greeting-list'> */}
         {display}
-      {/* </ul> */}
     </div>
   )
 };

@@ -36,6 +36,7 @@ class SessionForm extends React.Component {
         <h2>Log in to Grimeo</h2>
       </header>
     );
+    <div onClick={this.props.closeModal} className="close-x">X</div>
     const errorLis = errors.map((err, i) => {
       return (
         <li key={i}>{err}</li>
