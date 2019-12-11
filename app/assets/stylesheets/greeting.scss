@@ -28,11 +28,6 @@
     margin-left: 70px;
     size: 30%;
 }
-
-.nav-links li{
-    // display: flex;
-    padding: 90px;
-}
 .right-side{
     display: flex;
     align-items: center;
@@ -47,17 +42,28 @@
     background-color: transparent;
     border: none;
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 15px;
-    padding: 12px;
+    font-size: 16px;
+    padding: 16px;
     color: rgb(228, 151, 63);
 }
 .watch{
     background-color: transparent;
     border: none;
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 15px;
-    padding: 12px;
+    font-size: 16px;
+    padding: 16x;
     color: rgb(228, 151, 63);
+}
+.logged-in-watch{
+    background-color: transparent;
+    border: none;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    padding: 16x;
+    color: rgb(228, 151, 63);
+    margin-top: 7px;
+    margin-left: 10px;
+    font-weight: bold;
 }
 .signup{
     background-color: transparent;
@@ -69,8 +75,13 @@
     border: solid 0.5px rgb(228, 151, 63);
     border-radius: 3px;
     margin-left: 20px;
+    font-weight: bold;
+    padding-left: 15px;
+    padding-right: 15px;
 }
-
+.signup:hover{
+    border-color: rgb(100, 76, 49);
+}
 .upload{
     background-color: rgb(228, 151, 63);
     border: none;
@@ -86,6 +97,9 @@
 .upload{
     margin-right: 15px;
 }
+.upload:hover{
+    background-color: rgb(167, 110, 46);
+}
 .user-dropdown{
     background-color: rgb(228, 151, 63);
     border: none;
@@ -96,4 +110,49 @@
     border-radius: 3px;
     margin-right: 15px;
 }
+img{
+    height: 20px;
+}
 
+  
+.dropdown {
+position: relative;
+display: inline-block;
+}
+
+.dropdown-content {
+display: none;
+position: absolute;
+// padding: 30px;
+background-color: rgb(31, 32, 32);
+z-index: 1;
+width: 150px;
+left: -55px;
+}
+
+.dropdown-link{
+    color: rgb(148, 148, 148);
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 15px;
+    position: relative;
+}
+.dropdown-user{
+    color: rgb(148, 148, 148);
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 15px;
+    padding-bottom: 25;
+    font-weight: bold;
+    position: relative;
+}
+
+.dropdown:hover .dropdown-content{
+    // transition-delay: 5;
+    display: flex;
+    flex-direction: column;
+    // align-items: center;
+}
+.greeting{
+    border-bottom: solid 1px rgb(105, 81, 52);
+}

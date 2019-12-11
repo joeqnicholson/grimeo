@@ -28,9 +28,7 @@ export const login = (formUser) => (dispatch) => {
   return APIUtil.login(formUser)
   .then(
     user => dispatch(receiveCurrentUser(user)), 
-    errors => {
-      // debugger
-      dispatch(receiveErrors(errors));
+    errors => {dispatch(receiveErrors(errors));
     }
   );
 };

@@ -10,13 +10,31 @@ class SessionForm extends React.Component {
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.demoUser = this.demoUser.bind(this);
+  }
+  demoUser(){
+    // function randomStr(len, arr) { 
+    //   var ans = ''; 
+    //   for (var i = len; i > 0; i--) { 
+    //     ans +=  
+    //     arr[Math.floor(Math.random() * arr.length)]; 
+    //   } 
+    //   return ans; 
+    // } 
+    // const str = "1234567890qwertyuiopasdfghjklzxcvbnm"
+    // this.props.formType === 'signup' ? 
+    // this.setState({username: randomStr(16, str), password:'password'}) :
+    this.props.login({username: "Ada Lovelace", password:'password'})
+    .then(() => this.props.closeModal());
+    this.props.closeModal();
   }
 
   handleSubmit(e) {
     e.preventDefault();
+    
     const user = Object.assign({}, this.state);
     this.props.processForm(user)
-      .then(() => this.props.history.push('/'));
+      .then(() => this.props.closeModal());
   }
 
   updateState(field) {
@@ -38,7 +56,7 @@ class SessionForm extends React.Component {
     );
     const errorLis = errors.map((err, i) => {
       return (
-        <li key={i}>{err}</li>
+        <div class='error'>{err}</div>
       )
     });
     return (
@@ -48,9 +66,7 @@ class SessionForm extends React.Component {
           {formHeader}
         </div>
           <div className="session-form">
-        <ul>
-          {errorLis}
-        </ul>
+
         <form onSubmit={this.handleSubmit}>
           <label>
             <input 
@@ -68,8 +84,16 @@ class SessionForm extends React.Component {
               value={this.state.password}
             />
           </label>
-          <button class='log-sign-button'>{formType === 'signup' ? 'Sign Up' : 'Log In'}</button>
+          <div class='errors'>
+          {errors.length > 1 ? <div class='error'>Please enter your username, and password</div> : errorLis}
+        </div>
+          <button class='log-sign-button' type='submit'>{formType === 'signup' ? 'Sign Up' : 'Log In'}</button>
         </form>
+        {
+          // formType === 'signup' ? <button class='log-sign-button' onClick={this.demoUser}>Sign Up as Robot</button> : 
+          <button class='log-sign-button' onClick={this.demoUser}>Login as Ada Lovelace</button>
+        }
+        
       </div>
       </div>
     )

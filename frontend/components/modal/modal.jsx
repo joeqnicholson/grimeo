@@ -9,6 +9,9 @@ function Modal({modal, closeModal}) {
   if (!modal) {
     return null;
   }
+  // if(currentUser !== null){
+  //   return null
+  // }
   modal === 'login' ? 
   component = <LoginFormContainer /> :  
   component = <SignupFormContainer />;
@@ -24,7 +27,7 @@ function Modal({modal, closeModal}) {
 
 const mapStateToProps = state => {
   return {
-    modal: state.ui.modal
+    modal: state.ui.modal,
   };
 };
 
