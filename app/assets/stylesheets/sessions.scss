@@ -1,3 +1,60 @@
 // Place all the styles related to the sessions controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.session-form{
+    padding: 16px;
+        
+}
+input[type=text], input[type=password], .log-sign-button {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid rgb(66, 66, 66);
+    box-sizing: border-box;
+    border-radius: 2px;
+    background-color: rgb(36, 36, 36);
+  }
+  .log-sign-button{
+    background-color: rgb(228, 151, 63);
+    border: none;
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+    font-size: 15px;
+  }
+
+  .log-sign-button:hover{
+      background-color: rgb(17, 17, 17);
+
+  }
+  .login-join-titles{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.3em;
+    font-weight: 700;
+    text-align: center;
+    color: #d89135;
+  }
+  .modal-header{
+    // width: 400px;
+    // max-height: 80px;
+    background-color: rgb(27, 27, 27);
+    border-bottom: 1px solid rgb(37, 34, 24);
+    position: relative;
+    bottom: 5px;
+    padding: 18px;
+    // padding-left:
+    // padding: 50px;
+}
+.close-x{
+  background-color: transparent;
+  color: rgb(228, 151, 63);
+  border: none;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  font-size: 15;
+  float: right;
+}
+
+
+  

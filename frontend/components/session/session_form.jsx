@@ -29,42 +29,48 @@ class SessionForm extends React.Component {
     const { formType, errors } = this.props;
     const formHeader = formType === 'signup' ? (
       <header>
-        <h2>Join Grimeo</h2>
+        <h2 class='login-join-titles'>Join Grimeo</h2>
       </header>
     ) : ( 
       <header>
-        <h2>Log in to Grimeo</h2>
+        <h2 class='login-join-titles'>Log in to Grimeo</h2>
       </header>
     );
-    <div onClick={this.props.closeModal} className="close-x">X</div>
     const errorLis = errors.map((err, i) => {
       return (
         <li key={i}>{err}</li>
       )
     });
     return (
-      <div className="session-form">
-        {formHeader}
+      <div>
+      <div class="modal-header">
+          <button onClick={this.props.closeModal} class="close-x">X</button>
+          {formHeader}
+        </div>
+          <div className="session-form">
         <ul>
           {errorLis}
         </ul>
         <form onSubmit={this.handleSubmit}>
-          <label> Username:
+          <label>
             <input 
               type="text" 
+              placeholder='Username'
               onChange={this.updateState('username')} 
               value={this.state.username}
             />
           </label>
-          <label> Password:
+          <label>
             <input 
               type="password" 
+              placeholder='Password'
               onChange={this.updateState('password')} 
               value={this.state.password}
             />
           </label>
-          <button>{formType === 'signup' ? 'Sign Up' : 'Log In'}</button>
+          <button class='log-sign-button'>{formType === 'signup' ? 'Sign Up' : 'Log In'}</button>
         </form>
+      </div>
       </div>
     )
   }
