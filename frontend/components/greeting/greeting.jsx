@@ -41,8 +41,8 @@ export default ({ currentUser, logoutUser, openModal }) => {
 
   return (
     <div class='greeting'>
-      <div class="logo">
-          <Link>grimeo</Link>
+      <div>
+          <Link class="logo">grimeo</Link>
       </div>
       {display}
     </div>

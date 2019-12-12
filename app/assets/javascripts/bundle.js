@@ -309,9 +309,9 @@ __webpack_require__.r(__webpack_exports__);
   }), " Upload"))));
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     "class": "greeting"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
     "class": "logo"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], null, "grimeo")), display);
+  }, "grimeo")), display);
 }); // import React from 'react';
 // import { Link } from 'react-router-dom';
 // export default ({ currentUser, logoutUser, openModal }) => {
@@ -538,11 +538,9 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
     processForm: function processForm(user) {
       return dispatch(Object(_actions_session_actions__WEBPACK_IMPORTED_MODULE_2__["login"])(user));
     },
-    otherForm: react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("button", {
-      onClick: function onClick() {
-        return dispatch(Object(_actions_modal_actions__WEBPACK_IMPORTED_MODULE_3__["openModal"])('signup'));
-      }
-    }, "Signup"),
+    otherForm: function otherForm() {
+      return dispatch(Object(_actions_modal_actions__WEBPACK_IMPORTED_MODULE_3__["openModal"])('signup'));
+    },
     signup: function signup(user) {
       return dispatch(Object(_actions_session_actions__WEBPACK_IMPORTED_MODULE_2__["signup"])(user));
     },
@@ -683,9 +681,13 @@ function (_React$Component) {
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         "class": "session-input",
         type: "text",
-        placeholder: "Username",
+        placeholder: "First and last name",
         onChange: this.updateState('username'),
         value: this.state.username
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        "class": "session-input",
+        type: "email",
+        placeholder: "Email"
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         "class": "session-input",
         type: "password",
@@ -696,7 +698,7 @@ function (_React$Component) {
         "class": "errors"
       }, errors.length > 1 ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         "class": "error"
-      }, "Please enter your username, and password") : errorLis), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+      }, "Please enter your name, email and password") : errorLis), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         "class": "log-sign-button",
         type: "submit"
       }, formType === 'signup' ? 'Sign Up' : 'Log In'), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
@@ -705,12 +707,13 @@ function (_React$Component) {
       react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         "class": "log-sign-button",
         onClick: this.demoUser
-      }, " as Ada Lovelace"), formType === 'signup' ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, " Continue as Ada Lovelace"), formType === 'signup' ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         "class": "other-form-prompt"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         "class": "dont-already"
       }, "Already have an account?", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-        "class": "other-form-link"
+        "class": "other-form-link",
+        onClick: this.props.otherForm
       }, "Log in")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         "class": "text-below"
       }, "By joining Vimeo, you agree to our Terms of Service, Privacy Policy"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -720,7 +723,8 @@ function (_React$Component) {
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         "class": "dont-already"
       }, "Don't have an account?", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-        "class": "other-form-link"
+        "class": "other-form-link",
+        onClick: this.props.otherForm
       }, "Join")))));
     }
   }]);
@@ -782,11 +786,9 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
     processForm: function processForm(user) {
       return dispatch(Object(_actions_session_actions__WEBPACK_IMPORTED_MODULE_2__["signup"])(user));
     },
-    otherForm: react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("button", {
-      onClick: function onClick() {
-        return dispatch(Object(_actions_modal_actions__WEBPACK_IMPORTED_MODULE_3__["openModal"])('login'));
-      }
-    }, "Login"),
+    otherForm: function otherForm() {
+      return dispatch(Object(_actions_modal_actions__WEBPACK_IMPORTED_MODULE_3__["openModal"])('login'));
+    },
     signup: function signup(user) {
       return dispatch(Object(_actions_session_actions__WEBPACK_IMPORTED_MODULE_2__["signup"])(user));
     },

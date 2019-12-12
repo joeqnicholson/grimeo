@@ -69,9 +69,15 @@ class SessionForm extends React.Component {
           <label>
             <input class='session-input'
               type="text" 
-              placeholder='Username'
+              placeholder='First and last name'
               onChange={this.updateState('username')} 
               value={this.state.username}
+            />
+          </label>
+          <label>
+            <input class='session-input'
+              type="email" 
+              placeholder='Email' 
             />
           </label>
           <label>
@@ -83,20 +89,20 @@ class SessionForm extends React.Component {
             />
           </label>
           <div class='errors'>
-          {errors.length > 1 ? <div class='error'>Please enter your username, and password</div> : errorLis}
+          {errors.length > 1 ? <div class='error'>Please enter your name, email and password</div> : errorLis}
         </div>
           <button class='log-sign-button' type='submit'>{formType === 'signup' ? 'Sign Up' : 'Log In'}</button>
           <span class='or'>or</span>
         </form>
         {
           // formType === 'signup' ? <button class='log-sign-button' onClick={this.demoUser}>Sign Up as Robot</button> : 
-          <button class='log-sign-button' onClick={this.demoUser}> as Ada Lovelace</button>
+          <button class='log-sign-button' onClick={this.demoUser}> Continue as Ada Lovelace</button>
         }
         {formType === 'signup' ? 
         <div class='other-form-prompt'>
             <div class='dont-already'>
             Already have an account?
-            <button class='other-form-link'>Log in</button>
+            <button class='other-form-link' onClick={this.props.otherForm}>Log in</button>
             </div >
             <div class='text-below'>By joining Vimeo, you agree to our Terms of Service, Privacy Policy</div>
             <div class='text-below'>and Cookie Policy.</div>
@@ -104,7 +110,7 @@ class SessionForm extends React.Component {
           <div class='other-form-prompt'>
             <div class='dont-already'>
               Don't have an account?
-              <button class='other-form-link'>Join</button>
+              <button class='other-form-link' onClick={this.props.otherForm}>Join</button>
             </div>
             
           </div>

@@ -28,6 +28,10 @@
     margin-left: 70px;
     size: 30%;
 }
+.logo:hover{
+    color: rgb(95, 65, 32);
+    
+}
 .right-side{
     display: flex;
     align-items: center;
@@ -42,7 +46,7 @@
     background-color: transparent;
     border: none;
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 16px;
+    font-size: 15px;
     padding: 16px;
     color: rgb(228, 151, 63);
 }
@@ -50,7 +54,7 @@
     background-color: transparent;
     border: none;
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 16px;
+    font-size: 15px;
     padding: 16x;
     color: rgb(228, 151, 63);
 }
@@ -58,7 +62,7 @@
     background-color: transparent;
     border: none;
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 16px;
+    font-size: 15px;
     padding: 16x;
     color: rgb(228, 151, 63);
     margin-top: 7px;
@@ -69,7 +73,7 @@
     background-color: transparent;
     border: none;
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 15px;
+    font-size: 16px;
     padding: 12px;
     color: rgb(228, 151, 63);
     border: solid 0.5px rgb(228, 151, 63);
@@ -87,7 +91,7 @@
     border: none;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 15px;
-    padding: 12px;
+    padding: 12px 18px;
     color: white;
     border-radius: 3px;
 }
@@ -108,6 +112,7 @@
 }
 .upload{
     margin-right: 50px;
+
 }
 .upload:hover{
     background-color: rgb(167, 110, 46);
@@ -140,6 +145,7 @@ background-color: rgb(31, 32, 32);
 z-index: 1;
 width: 150px;
 left: -55px;
+padding: 12px;
 }
 
 .dropdown-link{
