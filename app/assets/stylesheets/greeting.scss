@@ -93,9 +93,21 @@
 }
 .search{
     margin-right: 15px;
+   
+}
+.greet-search{
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid rgb(66,66,66);
+    box-sizing: border-box;
+    border-radius: 2px;
+    background-color: rgb(36, 36, 36);
+    color: blanchedalmond;
 }
 .upload{
-    margin-right: 15px;
+    margin-right: 50px;
 }
 .upload:hover{
     background-color: rgb(167, 110, 46);

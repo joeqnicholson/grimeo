@@ -251,6 +251,7 @@ __webpack_require__.r(__webpack_exports__);
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     "class": "search"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    "class": "greet-search",
     type: "text",
     placeholder: "Search"
   })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -295,6 +296,7 @@ __webpack_require__.r(__webpack_exports__);
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     "class": "search"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    "class": "greet-search",
     type: "text",
     placeholder: "Search"
   })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
@@ -541,8 +543,8 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
         return dispatch(Object(_actions_modal_actions__WEBPACK_IMPORTED_MODULE_3__["openModal"])('signup'));
       }
     }, "Signup"),
-    login: function login(user) {
-      return dispatch(Object(_actions_session_actions__WEBPACK_IMPORTED_MODULE_2__["login"])(user));
+    signup: function signup(user) {
+      return dispatch(Object(_actions_session_actions__WEBPACK_IMPORTED_MODULE_2__["signup"])(user));
     },
     closeModal: function closeModal() {
       return dispatch(Object(_actions_modal_actions__WEBPACK_IMPORTED_MODULE_3__["closeModal"])());
@@ -614,19 +616,19 @@ function (_React$Component) {
     value: function demoUser() {
       var _this2 = this;
 
-      // function randomStr(len, arr) { 
-      //   var ans = ''; 
-      //   for (var i = len; i > 0; i--) { 
-      //     ans +=  
-      //     arr[Math.floor(Math.random() * arr.length)]; 
-      //   } 
-      //   return ans; 
-      // } 
-      // const str = "1234567890qwertyuiopasdfghjklzxcvbnm"
-      // this.props.formType === 'signup' ? 
-      // this.setState({username: randomStr(16, str), password:'password'}) :
-      this.props.login({
-        username: "Ada Lovelace",
+      function randomStr(len, arr) {
+        var ans = '';
+
+        for (var i = len; i > 0; i--) {
+          ans += arr[Math.floor(Math.random() * arr.length)];
+        }
+
+        return ans;
+      }
+
+      var str = "1234567890qwertyuiopasdfghjklzxcvbnm";
+      this.props.signup({
+        username: 'Ada Lovelace' + randomStr(10, str),
         password: 'password'
       }).then(function () {
         return _this2.props.closeModal();
@@ -679,11 +681,13 @@ function (_React$Component) {
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
         onSubmit: this.handleSubmit
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        "class": "session-input",
         type: "text",
         placeholder: "Username",
         onChange: this.updateState('username'),
         value: this.state.username
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        "class": "session-input",
         type: "password",
         placeholder: "Password",
         onChange: this.updateState('password'),
@@ -695,11 +699,29 @@ function (_React$Component) {
       }, "Please enter your username, and password") : errorLis), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         "class": "log-sign-button",
         type: "submit"
-      }, formType === 'signup' ? 'Sign Up' : 'Log In')), // formType === 'signup' ? <button class='log-sign-button' onClick={this.demoUser}>Sign Up as Robot</button> : 
+      }, formType === 'signup' ? 'Sign Up' : 'Log In'), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        "class": "or"
+      }, "or")), // formType === 'signup' ? <button class='log-sign-button' onClick={this.demoUser}>Sign Up as Robot</button> : 
       react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         "class": "log-sign-button",
         onClick: this.demoUser
-      }, "Login as Ada Lovelace")));
+      }, " as Ada Lovelace"), formType === 'signup' ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        "class": "other-form-prompt"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        "class": "dont-already"
+      }, "Already have an account?", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        "class": "other-form-link"
+      }, "Log in")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        "class": "text-below"
+      }, "By joining Vimeo, you agree to our Terms of Service, Privacy Policy"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        "class": "text-below"
+      }, "and Cookie Policy.")) : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        "class": "other-form-prompt"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        "class": "dont-already"
+      }, "Don't have an account?", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        "class": "other-form-link"
+      }, "Join")))));
     }
   }]);
 
@@ -765,8 +787,8 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
         return dispatch(Object(_actions_modal_actions__WEBPACK_IMPORTED_MODULE_3__["openModal"])('login'));
       }
     }, "Login"),
-    login: function login(user) {
-      return dispatch(Object(_actions_session_actions__WEBPACK_IMPORTED_MODULE_2__["login"])(user));
+    signup: function signup(user) {
+      return dispatch(Object(_actions_session_actions__WEBPACK_IMPORTED_MODULE_2__["signup"])(user));
     },
     closeModal: function closeModal() {
       return dispatch(Object(_actions_modal_actions__WEBPACK_IMPORTED_MODULE_3__["closeModal"])());

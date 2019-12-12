@@ -6,15 +6,17 @@
     padding: 16px;
         
 }
-input[type=text], input[type=password], .log-sign-button {
+.session-input, .log-sign-button {
     width: 100%;
     padding: 12px 20px;
     margin: 8px 0;
     display: inline-block;
-    border: 1px solid rgb(66, 66, 66);
+    border: 1px solid rgb(66,66,66);
     box-sizing: border-box;
     border-radius: 2px;
     background-color: rgb(36, 36, 36);
+    color: blanchedalmond;
+    height: 55px;
   }
   .log-sign-button{
     background-color: rgb(228, 151, 63);
@@ -33,7 +35,7 @@ input[type=text], input[type=password], .log-sign-button {
     font-size: 1.3em;
     font-weight: 700;
     text-align: center;
-    color: #d89135;
+    color: #afafaf;
   }
   .modal-header{
     // width: 400px;
@@ -52,7 +54,7 @@ input[type=text], input[type=password], .log-sign-button {
   border: none;
   font-family: Arial, Helvetica, sans-serif;
   font-weight: bold;
-  font-size: 15;
+  font-size: 25;
   float: right;
 }
 .error{
@@ -66,6 +68,32 @@ justify-content: center;
   padding-top: 20px;
   padding-bottom: 20px;
 }
-
+.or{
+  display: flex;
+  justify-content: center;
+}
+.other-form-link{
+  background-color: transparent;
+  border: none;
+  font-family: Arial, Helvetica, sans-serif;
+  color: rgb(228, 151, 63);
+  font-size: .875rem;
+}
+.other-form-link:hover{
+  color: rgb(121, 80, 33);
+}
+.other-form-link{
+  display: flex;
+  justify-content: center;
+}
+.text-below{
+  display: flex;
+  justify-content: center;
+  font-size: 80%
+}
+.dont-already{
+  display: flex;
+  justify-content: center;
+}
 
   

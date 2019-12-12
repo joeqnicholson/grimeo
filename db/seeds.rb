@@ -5,3 +5,5 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+Video.create!({:user_id => 1, :title => 'charlie brown', :description => 'lucy and the pumpkin', :plays => 0})

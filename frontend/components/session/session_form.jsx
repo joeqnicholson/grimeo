@@ -13,18 +13,16 @@ class SessionForm extends React.Component {
     this.demoUser = this.demoUser.bind(this);
   }
   demoUser(){
-    // function randomStr(len, arr) { 
-    //   var ans = ''; 
-    //   for (var i = len; i > 0; i--) { 
-    //     ans +=  
-    //     arr[Math.floor(Math.random() * arr.length)]; 
-    //   } 
-    //   return ans; 
-    // } 
-    // const str = "1234567890qwertyuiopasdfghjklzxcvbnm"
-    // this.props.formType === 'signup' ? 
-    // this.setState({username: randomStr(16, str), password:'password'}) :
-    this.props.login({username: "Ada Lovelace", password:'password'})
+    function randomStr(len, arr) { 
+      var ans = ''; 
+      for (var i = len; i > 0; i--) { 
+        ans +=  
+        arr[Math.floor(Math.random() * arr.length)]; 
+      } 
+      return ans; 
+    } 
+    const str = "1234567890qwertyuiopasdfghjklzxcvbnm"
+    this.props.signup({username: 'Ada Lovelace' + randomStr(10, str), password:'password'})
     .then(() => this.props.closeModal());
     this.props.closeModal();
   }
@@ -69,7 +67,7 @@ class SessionForm extends React.Component {
 
         <form onSubmit={this.handleSubmit}>
           <label>
-            <input 
+            <input class='session-input'
               type="text" 
               placeholder='Username'
               onChange={this.updateState('username')} 
@@ -77,7 +75,7 @@ class SessionForm extends React.Component {
             />
           </label>
           <label>
-            <input 
+            <input class='session-input'
               type="password" 
               placeholder='Password'
               onChange={this.updateState('password')} 
@@ -88,10 +86,31 @@ class SessionForm extends React.Component {
           {errors.length > 1 ? <div class='error'>Please enter your username, and password</div> : errorLis}
         </div>
           <button class='log-sign-button' type='submit'>{formType === 'signup' ? 'Sign Up' : 'Log In'}</button>
+          <span class='or'>or</span>
         </form>
         {
           // formType === 'signup' ? <button class='log-sign-button' onClick={this.demoUser}>Sign Up as Robot</button> : 
-          <button class='log-sign-button' onClick={this.demoUser}>Login as Ada Lovelace</button>
+          <button class='log-sign-button' onClick={this.demoUser}> as Ada Lovelace</button>
+        }
+        {formType === 'signup' ? 
+        <div class='other-form-prompt'>
+            <div class='dont-already'>
+            Already have an account?
+            <button class='other-form-link'>Log in</button>
+            </div >
+            <div class='text-below'>By joining Vimeo, you agree to our Terms of Service, Privacy Policy</div>
+            <div class='text-below'>and Cookie Policy.</div>
+          </div> : 
+          <div class='other-form-prompt'>
+            <div class='dont-already'>
+              Don't have an account?
+              <button class='other-form-link'>Join</button>
+            </div>
+            
+          </div>
+         
+
+        
         }
         
       </div>

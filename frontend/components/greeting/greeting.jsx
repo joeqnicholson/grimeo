@@ -10,7 +10,7 @@ export default ({ currentUser, logoutUser, openModal }) => {
         <div><button class='logged-in-watch'>Watch</button></div>
       </div>
       <div class='right-side'>
-        <div class='search'><input type="text" placeholder='Search'/></div>
+        <div class='search'><input class='greet-search'type="text" placeholder='Search'/></div>
         <div class="dropdown">
         <div><button class='user-dropdown'><i class="fas fa-skull"></i></button></div>
           <div class="dropdown-content">
@@ -33,7 +33,7 @@ export default ({ currentUser, logoutUser, openModal }) => {
       </div>  
        
       <div class='right-side'>
-        <div class='search'><input type="text" placeholder='Search'/></div>
+        <div class='search'><input class='greet-search'type="text" placeholder='Search'/></div>
         <div><button class="upload" onClick={() => openModal('signup')}><i class="fas fa-cloud-upload-alt"></i> Upload</button></div>
        </div>
     </div>
