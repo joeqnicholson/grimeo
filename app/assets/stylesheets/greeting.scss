@@ -19,7 +19,7 @@
 
 .logo{
     font-family: 'Black Rose', arial;
-    color: rgb(228, 151, 63);
+    color: rgb(43, 98, 116);;
     text-decoration: none;
     font-size: 55px;
     padding: 0px;
@@ -29,7 +29,7 @@
     size: 30%;
 }
 .logo:hover{
-    color: rgb(95, 65, 32);
+    color: rgb(45, 54, 59);
     
 }
 .right-side{
@@ -48,7 +48,7 @@
     font-family: Arial, Helvetica, sans-serif;
     font-size: 15px;
     padding: 16px;
-    color: rgb(228, 151, 63);
+    color: rgb(43, 98, 116);;
 }
 .watch{
     background-color: transparent;
@@ -56,7 +56,8 @@
     font-family: Arial, Helvetica, sans-serif;
     font-size: 15px;
     padding: 16x;
-    color: rgb(228, 151, 63);
+    color: rgb(43, 98, 116);
+    margin-top: 1px;
 }
 .logged-in-watch{
     background-color: transparent;
@@ -64,7 +65,7 @@
     font-family: Arial, Helvetica, sans-serif;
     font-size: 15px;
     padding: 16x;
-    color: rgb(228, 151, 63);
+    color: rgb(43, 98, 116);;
     margin-top: 7px;
     margin-left: 10px;
     font-weight: bold;
@@ -75,8 +76,8 @@
     font-family: Arial, Helvetica, sans-serif;
     font-size: 16px;
     padding: 12px;
-    color: rgb(228, 151, 63);
-    border: solid 0.5px rgb(228, 151, 63);
+    color: rgb(43, 98, 116);;
+    border: solid 0.5px rgb(43, 98, 116);;
     border-radius: 3px;
     margin-left: 20px;
     font-weight: bold;
@@ -84,10 +85,10 @@
     padding-right: 15px;
 }
 .signup:hover{
-    border-color: rgb(100, 76, 49);
+    border-color: rgb(45, 54, 59);
 }
 .upload{
-    background-color: rgb(228, 151, 63);
+    background-color: rgb(43, 98, 116);;
     border: none;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 15px;
@@ -115,10 +116,10 @@
 
 }
 .upload:hover{
-    background-color: rgb(167, 110, 46);
+    background-color: rgb(45, 54, 59);
 }
 .user-dropdown{
-    background-color: rgb(228, 151, 63);
+    background-color: rgb(43, 98, 116);;
     border: none;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 15px;
@@ -128,7 +129,8 @@
     margin-right: 15px;
 }
 img{
-    height: 20px;
+    width: 244.37px;
+    height: 137.51px
 }
 
   
@@ -172,5 +174,5 @@ padding: 12px;
     // align-items: center;
 }
 .greeting{
-    border-bottom: solid 1px rgb(105, 81, 52);
+    border-bottom: solid 1px rgb(31, 45, 49);
 }

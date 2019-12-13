@@ -1,5 +1,8 @@
 import React from 'react';
 import GreetingContainer from './greeting/greeting_container';
+import VideoIndexContainer from './videos/video_index_container';
+import VideoShowContainer from './videos/video_show_container';
+import HomePage from './greeting/homepage';
 import LoginFormContainer from './session/login_form_container';
 import SignupFormContainer from './session/signup_form_container';
 import { Route } from 'react-router-dom';
@@ -13,9 +16,9 @@ const App = () => {
     <div>
       <Modal />
       <GreetingContainer />
-      
-      {/* <AuthRoute path="/login" component={LoginFormContainer} />
-      <AuthRoute path="/signup" component={SignupFormContainer} /> */}
+      <Route exact path="/" component={HomePage}/>
+      <Route exact path="/watch" component={VideoIndexContainer}/>
+      <Route exact path="/watch/:videoId" component={VideoShowContainer}/>
     </div>
   );
 }

@@ -66,6 +66,7 @@ class SessionForm extends React.Component {
           <div className="session-form">
 
         <form onSubmit={this.handleSubmit}>
+          {formType === 'signup' ?
           <label>
             <input class='session-input'
               type="text" 
@@ -74,6 +75,9 @@ class SessionForm extends React.Component {
               value={this.state.username}
             />
           </label>
+          :
+          <div></div>
+          }
           <label>
             <input class='session-input'
               type="email" 
@@ -96,7 +100,7 @@ class SessionForm extends React.Component {
         </form>
         {
           // formType === 'signup' ? <button class='log-sign-button' onClick={this.demoUser}>Sign Up as Robot</button> : 
-          <button class='log-sign-button' onClick={this.demoUser}> Continue as Ada Lovelace</button>
+          <button class='log-sign-button-demo' onClick={this.demoUser}>Demo Login</button>
         }
         {formType === 'signup' ? 
         <div class='other-form-prompt'>

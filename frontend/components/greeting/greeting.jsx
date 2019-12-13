@@ -7,7 +7,13 @@ export default ({ currentUser, logoutUser, openModal }) => {
     <div class="nav-links">
       
       <div class='left-side'>
-        <div><button class='logged-in-watch'>Watch</button></div>
+        <div>
+          <Link to={`/watch`}>
+            <button class='logged-in-watch'>
+              Watch
+            </button>
+          </Link>
+          </div>
       </div>
       <div class='right-side'>
         <div class='search'><input class='greet-search'type="text" placeholder='Search'/></div>
@@ -29,7 +35,13 @@ export default ({ currentUser, logoutUser, openModal }) => {
       <div class='left-side'>
        <div><button class='signup' onClick={() => openModal('signup')}>Join</button></div>
        <div><button class='login' onClick={() => openModal('login')}>Log in</button></div>
-       <div><button class='watch'>Watch</button></div>
+       <div>
+        <Link to={`/watch`}>
+         <button class='watch'>
+           Watch
+           </button>
+         </Link>
+       </div>
       </div>  
        
       <div class='right-side'>
@@ -42,7 +54,7 @@ export default ({ currentUser, logoutUser, openModal }) => {
   return (
     <div class='greeting'>
       <div>
-          <Link class="logo">grimeo</Link>
+          <Link class="logo" to={`/`}>grimeo</Link>
       </div>
       {display}
     </div>
