@@ -15,7 +15,7 @@ class VideoIndex extends React.Component{
         const { videos, fetchUser } = this.props;
         return(
             <div>
-                <ul>
+                <div class='video-index-wrapper'>
                     {
                         videos.map(video=>(
                             <VideoIndexItem
@@ -23,7 +23,7 @@ class VideoIndex extends React.Component{
                             key={video.id}/>
                         ))
                     }
-                </ul>
+                </div>
             </div>
         );
     }

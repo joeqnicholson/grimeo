@@ -12,9 +12,8 @@ const LikesReducer=(state={},action)=>{
             let news = Object.assign({}, state);
             delete news[action.likeId];
             return news;
-        case RECEIVE_VIDEO:
-            return action.video.likes;
-            
+        // case RECEIVE_VIDEO:
+        //     return action.video.likes;
         default:
             return state;
     }

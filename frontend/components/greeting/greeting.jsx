@@ -26,7 +26,9 @@ export default ({ currentUser, logoutUser, openModal }) => {
           </div>
         </div>
           
-        <div><button class='upload'><i class="fas fa-cloud-upload-alt"></i> Upload</button></div>
+        <div><button class='upload'><i class="fas fa-cloud-upload-alt"></i> 
+        <Link to={`/upload`} class='upload-link'>Upload</Link>
+        </button></div>
       </div>
     </div>
     

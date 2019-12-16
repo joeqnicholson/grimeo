@@ -1,8 +1,6 @@
 import {RECEIVE_COMMENT, RECEIVE_ALL_COMMENTS, REMOVE_COMMENT} from '../actions/comment_actions';
 import {RECEIVE_VIDEO} from '../actions/video_actions';
 
-import {RECEIVE_COMMENT, RECEIVE_ALL_COMMENTS, REMOVE_COMMENT} from '../actions/comment_actions';
-import {RECEIVE_VIDEO} from '../actions/video_actions';
 const CommentsReducer=(state={},action)=>{
     Object.freeze(state);
     switch (action.type) {
@@ -16,7 +14,6 @@ const CommentsReducer=(state={},action)=>{
             return news;
         case RECEIVE_VIDEO:
             return action.video.comments;
-            
         default:
             return state;
     }

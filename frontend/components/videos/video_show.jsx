@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import CommentItem from '../comments/comment_item'
 
 class VideoShow extends React.Component{
     componentDidMount(){
@@ -7,6 +8,7 @@ class VideoShow extends React.Component{
       this.props.fetchVideo(this.props.match.params.videoId)
     }
     render() {
+      const { users } = this.props;
         // const { video } = this.props;
         // debugger
         if(!this.props.video){
@@ -26,9 +28,13 @@ class VideoShow extends React.Component{
                 <h1 class='vid-title'>{this.props.video.title}</h1>
                 <p class='vid-description'>{this.props.video.description}</p>
               </div>
-              {/* <div class='video-comments'>
-                <CommentIndex/>
-              </div> */}
+              <div class='video-comments'>
+                  {
+                    this.props.video.comments.map(comment=>(
+                      comment.body
+                    ))
+                  }
+              </div>
           </div>
         );
     }

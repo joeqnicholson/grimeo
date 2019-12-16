@@ -8,3 +8,6 @@
 
 Video.create!({:user_id => 1, :title => 'charlie brown', :description => 'lucy and the pumpkin', :plays => 0})
 Comment.create!({:user_id => 1, :body => 'i love charlie!!', :video_id => 3})
+Comment.create!({:user_id => 15, :body => 'i hate charlie!!', :video_id => 3})
+Comment.create!({:user_id => 4, :body => 'go charlie!!', :video_id => 3})
+Comment.create!({:user_id => 2, :body => 'i love charlie!!', :video_id => 3})

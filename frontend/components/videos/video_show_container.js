@@ -10,6 +10,6 @@ const msp=(state, ownProps)=>{
 }
 const mdp=dispatch=>({
     fetchVideo: (videoId)=>dispatch(fetchVideo(videoId)),
-    deleteVideo: (videoId)=>dispatch(deleteVideo(videoId)),
+    deleteVideo: (videoId)=>dispatch(deleteVideo(videoId))
 })
 export default connect(msp,mdp)(VideoShow)
