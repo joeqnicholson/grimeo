@@ -1,0 +1,22 @@
+.video-index-wrapper{
+    display: flex;
+}
+
+.video-index-wraps{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: 1;
+
+}
+.video-index-item{
+    width: 262px;
+    height: 179px;
+padding: 0 10px;
+}
+img{
+    width: 244.37px;
+    height: 137.51px
+}

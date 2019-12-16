@@ -45,6 +45,7 @@
     font-weight: 700;
     text-align: center;
     color: #afafaf;
+    margin-left: 32px;
   }
   .modal-header{
     // width: 400px;
@@ -64,9 +65,10 @@
   color: rgb(43, 98, 116);;
   border: none;
   font-family: Arial, Helvetica, sans-serif;
+  font-size: 20px;
   font-weight: bold;
-  font-size: 25;
   float: right;
+  padding-top: 16px;
 }
 .error{
 display: flex;

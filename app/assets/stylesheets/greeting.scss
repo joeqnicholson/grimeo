@@ -83,6 +83,8 @@
     font-weight: bold;
     padding-left: 15px;
     padding-right: 15px;
+    width: 71px;
+    height: 40px;
 }
 .signup:hover{
     border-color: rgb(45, 54, 59);
@@ -95,6 +97,11 @@
     padding: 12px 18px;
     color: white;
     border-radius: 3px;
+}
+.upload-link{
+    text-decoration: none;
+    color: white;
+    font-size: 15px;
 }
 .search{
     margin-right: 15px;
@@ -129,8 +136,8 @@
     margin-right: 15px;
 }
 img{
-    width: 244.37px;
-    height: 137.51px
+    // width: 244.37px;
+    // height: 137.51px
 }
 
   

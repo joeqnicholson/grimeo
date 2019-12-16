@@ -2,17 +2,16 @@ import React from 'react';
 import VideoIndexItem from './video_index_item';
 
 class VideoIndex extends React.Component{
-    constructor(props){
-        super(props);
-    }
+
     componentDidMount(){
         this.props.fetchVideos();
+        debugger
     }
     render(){
         if(!this.props.videos){
             return null
           }
-        const { videos, fetchUser } = this.props;
+        const { videos } = this.props;
         return(
             <div>
                 <div class='video-index-wrapper'>

@@ -14,11 +14,21 @@ class VideoUpload extends React.Component{
         this.handleFile = this.handleFile.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
     }
-    handleInput(){
-
+    handleInput(field) {
+        return (e) => {
+            this.setState({ [field]: e.currentTarget.value });
+        };
     }
-    handleFile(){
-        this.setState({videoFile: e.currentTarget.files[0]})
+    handleFile(e) {
+    const file = e.currentTarget.files[0];
+    const fileReader = new FileReader();
+    fileReader.onloadend = () => {
+
+        this.setState({videoFile: file, videoUrl: fileReader.result});
+    };
+    if (file) {
+        fileReader.readAsDataURL(file);
+    }
     }
     handleSubmit(){
         e.preventDefault();
@@ -36,33 +46,37 @@ class VideoUpload extends React.Component{
     render(){
         return(
             <div class='upload-master-wrap'>
-                <div class='upload-minibox'>
-                    <form onSubmit={this.handleSubmit.bind(this)}>
+                    <form class='upload-form'>
                         <div class='upload-container'>
-                            <input type='file' title=' ' class='upload-drag'
-                                onChange={this.handleFile.bind(this)} />
+
                             <img src="upload.png" class='upload-image' alt=""/>
                             <div class='big-drag-text-wrap'>
-                                <div class='big-drag-text'>Drag and drop anywhere to upload</div>
+                                <div class='big-drag-text'>Choose file to upload. Must be mp4 format.</div>
                             </div>
-                            <div class='text-prompt-upload'>
-                                 
-                            <i class="fas fa-cloud-upload-alt"> </i>
-                                 {` `}Or choose file</div>
+                            <div class="upload-btn-wrapper">
+                                <button class="btn">
+                                    <i class="fas fa-cloud-upload-alt">{" "}</i> 
+                                    {` `}Pick a file
+                                    <input class='inputfile' type='file' title=' '
+                                onChange={this.handleFile} 
+                                />
+                                </button>
+                            </div>
                         </div>
                         <div class='input-wrapping'>
                             <input class='upload-title'     
                                 type="text"
                                 placeholder='Title'
-                                value={this.state.title}/>
+                                value={this.state.title}
+                                onChange={this.handleInput('title')}/>
                             <input class='upload-description'
                                 type="text"
                                 placeholder='Description'
-                                value={this.state.description}/>
-                            <button class='submit-upload'>Upload</button>
+                                value={this.state.description}
+                                onChange={this.handleInput('description')}/>
+                            <button type='submit' class='submit-upload'>Upload</button>
                         </div>
                     </form>
-                </div>
             </div>
         )
     }

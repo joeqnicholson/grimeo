@@ -361,27 +361,6 @@ var App = function App() {
 
 /***/ }),
 
-/***/ "./frontend/components/comments/comment_item.jsx":
-/*!*******************************************************!*\
-  !*** ./frontend/components/comments/comment_item.jsx ***!
-  \*******************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-
-
-var CommentItem = function CommentItem(props) {
-  react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, props.username), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, props.body));
-};
-
-/* harmony default export */ __webpack_exports__["default"] = (CommentItem);
-
-/***/ }),
-
 /***/ "./frontend/components/greeting/greeting.jsx":
 /*!***************************************************!*\
   !*** ./frontend/components/greeting/greeting.jsx ***!
@@ -441,7 +420,7 @@ __webpack_require__.r(__webpack_exports__);
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
     to: "/upload",
     "class": "upload-link"
-  }, "Upload"))))) : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  }, " Upload"))))) : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     "class": "nav-links"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     "class": "left-side"
@@ -984,7 +963,7 @@ function (_React$Component) {
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         onClick: this.props.closeModal,
         "class": "close-x"
-      }, "X"), formHeader), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, "\u2715"), formHeader), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "session-form"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
         onSubmit: this.handleSubmit
@@ -1151,16 +1130,17 @@ var VideoIndex =
 function (_React$Component) {
   _inherits(VideoIndex, _React$Component);
 
-  function VideoIndex(props) {
+  function VideoIndex() {
     _classCallCheck(this, VideoIndex);
 
-    return _possibleConstructorReturn(this, _getPrototypeOf(VideoIndex).call(this, props));
+    return _possibleConstructorReturn(this, _getPrototypeOf(VideoIndex).apply(this, arguments));
   }
 
   _createClass(VideoIndex, [{
     key: "componentDidMount",
     value: function componentDidMount() {
       this.props.fetchVideos();
+      debugger;
     }
   }, {
     key: "render",
@@ -1169,9 +1149,7 @@ function (_React$Component) {
         return null;
       }
 
-      var _this$props = this.props,
-          videos = _this$props.videos,
-          fetchUser = _this$props.fetchUser;
+      var videos = this.props.videos;
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         "class": "video-index-wrapper"
       }, videos.map(function (video) {
@@ -1243,7 +1221,45 @@ __webpack_require__.r(__webpack_exports__);
 
 var VideoIndexItem = function VideoIndexItem(props) {
   debugger;
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    "class": "video-index-wraps"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    "class": "video-index-item"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+    to: "watch/".concat(props.video.id)
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+    src: props.video.thumbnailUrl
+  })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, props.video.uploader.username), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, props.video.title)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    "class": "video-index-item"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+    to: "watch/".concat(props.video.id)
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+    src: props.video.thumbnailUrl
+  })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, props.video.uploader.username), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, props.video.title)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    "class": "video-index-item"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+    to: "watch/".concat(props.video.id)
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+    src: props.video.thumbnailUrl
+  })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, props.video.uploader.username), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, props.video.title)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    "class": "video-index-item"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+    to: "watch/".concat(props.video.id)
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+    src: props.video.thumbnailUrl
+  })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, props.video.uploader.username), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, props.video.title)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    "class": "video-index-item"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+    to: "watch/".concat(props.video.id)
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+    src: props.video.thumbnailUrl
+  })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, props.video.uploader.username), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, props.video.title)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    "class": "video-index-item"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+    to: "watch/".concat(props.video.id)
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+    src: props.video.thumbnailUrl
+  })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, props.video.uploader.username), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, props.video.title)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     "class": "video-index-item"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
     to: "watch/".concat(props.video.id)
@@ -1286,7 +1302,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
-/* harmony import */ var _comments_comment_item__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../comments/comment_item */ "./frontend/components/comments/comment_item.jsx");
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -1304,7 +1319,6 @@ function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.g
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
-
 
 
 
@@ -1329,9 +1343,6 @@ function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
-      var users = this.props.users; // const { video } = this.props;
-      // debugger
-
       if (!this.props.video) {
         return null;
       }
@@ -1416,6 +1427,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
@@ -1460,13 +1473,31 @@ function (_React$Component) {
 
   _createClass(VideoUpload, [{
     key: "handleInput",
-    value: function handleInput() {}
+    value: function handleInput(field) {
+      var _this2 = this;
+
+      return function (e) {
+        _this2.setState(_defineProperty({}, field, e.currentTarget.value));
+      };
+    }
   }, {
     key: "handleFile",
-    value: function handleFile() {
-      this.setState({
-        videoFile: e.currentTarget.files[0]
-      });
+    value: function handleFile(e) {
+      var _this3 = this;
+
+      var file = e.currentTarget.files[0];
+      var fileReader = new FileReader();
+
+      fileReader.onloadend = function () {
+        _this3.setState({
+          videoFile: file,
+          videoUrl: fileReader.result
+        });
+      };
+
+      if (file) {
+        fileReader.readAsDataURL(file);
+      }
     }
   }, {
     key: "handleSubmit",
@@ -1488,18 +1519,11 @@ function (_React$Component) {
     value: function render() {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         "class": "upload-master-wrap"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        "class": "upload-minibox"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
-        onSubmit: this.handleSubmit.bind(this)
+        "class": "upload-form"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         "class": "upload-container"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-        type: "file",
-        title: " ",
-        "class": "upload-drag",
-        onChange: this.handleFile.bind(this)
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
         src: "upload.png",
         "class": "upload-image",
         alt: ""
@@ -1507,25 +1531,35 @@ function (_React$Component) {
         "class": "big-drag-text-wrap"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         "class": "big-drag-text"
-      }, "Drag and drop anywhere to upload")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        "class": "text-prompt-upload"
+      }, "Choose file to upload. Must be mp4 format.")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        "class": "upload-btn-wrapper"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        "class": "btn"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
         "class": "fas fa-cloud-upload-alt"
-      }, " "), " ", "Or choose file")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, " "), " ", "Pick a file", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        "class": "inputfile",
+        type: "file",
+        title: " ",
+        onChange: this.handleFile
+      })))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         "class": "input-wrapping"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         "class": "upload-title",
         type: "text",
         placeholder: "Title",
-        value: this.state.title
+        value: this.state.title,
+        onChange: this.handleInput('title')
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         "class": "upload-description",
         type: "text",
         placeholder: "Description",
-        value: this.state.description
+        value: this.state.description,
+        onChange: this.handleInput('description')
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        type: "submit",
         "class": "submit-upload"
-      }, "Upload")))));
+      }, "Upload"))));
     }
   }]);
 
