@@ -14,12 +14,9 @@ class User < ApplicationRecord
   validates :username, presence: true, uniqueness: true
   validates :session_token, presence: true, uniqueness: true
   validates :password_digest, presence: true
-
-  has_many :videos,
-    primary_key: :id,
-    foreign_key: :user_id,
-    class_name: :Video
-
+  has_many :videos
+  has_many :comments
+  has_many :likes
 
   validates :password, length: { minimum: 6, allow_nil: true }
 

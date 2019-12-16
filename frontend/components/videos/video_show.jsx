@@ -3,20 +3,32 @@ import { Link } from 'react-router-dom';
 
 class VideoShow extends React.Component{
     componentDidMount(){
-      debugger
+      // debugger
       this.props.fetchVideo(this.props.match.params.videoId)
     }
     render() {
         // const { video } = this.props;
-        debugger
+        // debugger
         if(!this.props.video){
           return null
         }
         return (
           <div>
-            <h1>{this.props.video.title}</h1>
-            <p>{this.props.video.description}</p>
-            <video src={this.props.video.videoUrl}></video>
+            <div class='video-wrapper'>
+              <video 
+                  class='player'
+                  controls
+                  autoPlay
+                  src={this.props.video.videoUrl}
+                  type='video/mp4' />
+            </div>
+              <div class="video-information">
+                <h1 class='vid-title'>{this.props.video.title}</h1>
+                <p class='vid-description'>{this.props.video.description}</p>
+              </div>
+              {/* <div class='video-comments'>
+                <CommentIndex/>
+              </div> */}
           </div>
         );
     }

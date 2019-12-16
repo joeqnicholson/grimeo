@@ -2,9 +2,8 @@ import { RECEIVE_ERRORS, RECEIVE_CURRENT_USER } from "../actions/session_actions
 
 const _nullState = [];
 
-const sessionErrorsReducer = (state = _nullState, action) => {
+const SessionErrorsReducer=(state = _nullState,action)=>{
   Object.freeze(state);
-  // debugger
   switch(action.type){
     case RECEIVE_ERRORS:
       return action.messages;
@@ -15,4 +14,4 @@ const sessionErrorsReducer = (state = _nullState, action) => {
   }
 };
 
-export default sessionErrorsReducer;
+export default SessionErrorsReducer;

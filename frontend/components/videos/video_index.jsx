@@ -6,13 +6,12 @@ class VideoIndex extends React.Component{
         super(props);
     }
     componentDidMount(){
-        // debugger
         this.props.fetchVideos();
     }
- 
-
     render(){
-        // debugger
+        if(!this.props.videos){
+            return null
+          }
         const { videos, fetchUser } = this.props;
         return(
             <div>

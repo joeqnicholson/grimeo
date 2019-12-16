@@ -7,3 +7,4 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 Video.create!({:user_id => 1, :title => 'charlie brown', :description => 'lucy and the pumpkin', :plays => 0})
+Comment.create!({:user_id => 1, :body => 'i love charlie!!', :video_id => 3})

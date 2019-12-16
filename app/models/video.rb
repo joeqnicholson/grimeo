@@ -1,6 +1,8 @@
 class Video < ApplicationRecord
     has_one_attached :video 
     has_one_attached :thumbnail 
+    has_many :likes
+    has_many :comments
 
     belongs_to :uploader,
     primary_key: :id,
