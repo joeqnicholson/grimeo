@@ -277,9 +277,9 @@ var fetchVideo = function fetchVideo(videoId) {
     });
   };
 };
-var createVideo = function createVideo(video) {
+var createVideo = function createVideo(formData) {
   return function (dispatch) {
-    return _util_video_api_util__WEBPACK_IMPORTED_MODULE_0__["createVideo"](video).then(function (video) {
+    return _util_video_api_util__WEBPACK_IMPORTED_MODULE_0__["createVideo"](formData).then(function (video) {
       return dispatch(receiveVideo(video));
     });
   };
@@ -1342,11 +1342,7 @@ function (_React$Component) {
         "class": "vid-title"
       }, this.props.video.title), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
         "class": "vid-description"
-      }, this.props.video.description)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        "class": "video-comments"
-      }, this.props.video.comments.map(function (comment) {
-        return comment.body;
-      })));
+      }, this.props.video.description)));
     }
   }]);
 
@@ -1483,17 +1479,16 @@ function (_React$Component) {
   }, {
     key: "handleSubmit",
     value: function handleSubmit() {
-      e.preventDefault();
       var formData = new FormData();
       formData.append('video[title]', this.state.title);
-      formData.append('video[video]', this.state.videoFile);
-      $.ajax({
-        url: "/api/posts",
-        method: 'POST',
-        data: formData,
-        contentType: false,
-        processData: false
-      });
+      debugger;
+      formData.append('video[description]', this.state.title);
+
+      if (this.state.videoFile) {
+        formData.append('video[video_file]', this.state.videoFile);
+      }
+
+      this.props.createVideo(formData);
     }
   }, {
     key: "render",
@@ -1501,7 +1496,8 @@ function (_React$Component) {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         "class": "upload-master-wrap"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
-        "class": "upload-form"
+        "class": "upload-form",
+        onSubmit: this.handleSubmit
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         "class": "upload-container"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
@@ -1569,10 +1565,10 @@ __webpack_require__.r(__webpack_exports__);
 
 var msp = function msp(state, ownProps) {};
 
-var mdp = function mdp(dispatch, ownProps) {
+var mdp = function mdp(dispatch) {
   return {
-    upload: function upload(video) {
-      return dispatch(Object(_actions_video_actions__WEBPACK_IMPORTED_MODULE_2__["fetchVideo"])(video));
+    createVideo: function createVideo(video) {
+      return dispatch(Object(_actions_video_actions__WEBPACK_IMPORTED_MODULE_2__["createVideo"])(video));
     }
   };
 };
@@ -2061,13 +2057,13 @@ var fetchVideo = function fetchVideo(videoId) {
     url: "api/videos/".concat(videoId)
   });
 };
-var createVideo = function createVideo(video) {
+var createVideo = function createVideo(formData) {
   return $.ajax({
-    url: "api/videos",
+    url: "/api/videos",
     method: 'POST',
-    data: {
-      video: video
-    }
+    data: formData,
+    contentType: false,
+    processData: false
   });
 };
 var updateVideo = function updateVideo(video) {

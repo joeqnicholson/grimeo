@@ -10,12 +10,14 @@ export const fetchVideos=()=>(
     })
   );
   
-  export const createVideo=video=>(
+  export const createVideo=formData=>(
     $.ajax({
-      url: `api/videos`,
-      method: 'POST',
-      data: { video }
-    })
+          url: "/api/videos",
+          method: 'POST',
+          data: formData,
+          contentType: false,
+          processData: false
+      })
   );
   
   export const updateVideo=video=>(

@@ -14,11 +14,13 @@ class VideoUpload extends React.Component{
         this.handleFile = this.handleFile.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
     }
+
     handleInput(field) {
         return (e) => {
             this.setState({ [field]: e.currentTarget.value });
         };
     }
+
     handleFile(e) {
     const file = e.currentTarget.files[0];
     const fileReader = new FileReader();
@@ -31,24 +33,21 @@ class VideoUpload extends React.Component{
     }
     }
     handleSubmit(){
-        e.preventDefault();
         const formData = new FormData();
         formData.append('video[title]', this.state.title)
-        formData.append('video[video]', this.state.videoFile)
-        $.ajax({
-            url: "/api/posts",
-            method: 'POST',
-            data: formData,
-            contentType: false,
-            processData: false
-        });
+        debugger
+        formData.append('video[description]', this.state.title)
+        if(this.state.videoFile){
+            formData.append('video[video_file]', this.state.videoFile)
+        }
+        this.props.createVideo(formData)
+
     }
     render(){
         return(
             <div class='upload-master-wrap'>
-                    <form class='upload-form'>
+                    <form class='upload-form' onSubmit={this.handleSubmit}>
                         <div class='upload-container'>
-
                             <img src="upload.png" class='upload-image' alt=""/>
                             <div class='big-drag-text-wrap'>
                                 <div class='big-drag-text'>Choose file to upload. Must be mp4 format.</div>

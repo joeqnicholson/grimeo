@@ -1,14 +1,14 @@
 import { connect } from 'react-redux';
 import VideoUpload from './video_upload';
-import { fetchVideo } from '../../actions/video_actions';
+import { createVideo } from '../../actions/video_actions';
 
 const msp = (state, ownProps) => {
 
 }
 
-const mdp = (dispatch, ownProps) => {
+const mdp = (dispatch) => {
     return {
-        upload: video => dispatch(fetchVideo(video)),
+        createVideo: video => dispatch(createVideo(video)),
     }
 }
 
