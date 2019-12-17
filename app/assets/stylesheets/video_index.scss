@@ -40,14 +40,19 @@
 .video-index-item{
     width: 262px;
     height: 179px;
-    padding: 0 10px;
+    padding-left: 2px;
+    padding-right: 2px;
+    padding-bottom: 5px;
 }
 .video-index-username{
     font-size: 12px;
+    padding: 2px;
 }
 .video-index-title{
     font-size: 13.5px;
     font-weight: bold;
+    padding-top: 4px;
+    padding-bottom: 2px;
 }
 .staff-pick{
     width: 202px;

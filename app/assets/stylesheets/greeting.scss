@@ -1,14 +1,12 @@
 .greeting{
     display: flex;
 }
-
 .greeting-list{
     display: flex;
     list-style-type: none;
     margin: 0;
     padding: 0;
 }
-
 .nav-links{
     width: 100%;
     display: flex;
@@ -16,26 +14,23 @@
     align-items: center;
     justify-content: space-between;
 }
-
 .logo{
-    font-family: 'Black Rose', arial;
+    font-family: 'Pacifico', cursive;
     color: var(--main-color);
     text-decoration: none;
     font-size: 55px;
     padding: 0px;
     position: relative;
-    bottom: 3px;
+    bottom: 10px;
     margin-left: 70px;
     size: 30%;
 }
 .logo:hover{
     color: rgb(45, 54, 59);
-    
 }
 .right-side{
     display: flex;
     align-items: center;
-
 }
 .left-side{
     display: flex;
