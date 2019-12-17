@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 class VideoShow extends React.Component{
     componentDidMount(){
-      // debugger
+      // 
       this.props.fetchVideo(this.props.match.params.videoId)
     }
     render() {

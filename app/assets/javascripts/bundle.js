@@ -338,7 +338,7 @@ __webpack_require__.r(__webpack_exports__);
  // import Logo from './grimeo-logo-1.png'
 
 var App = function App() {
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_modal_modal_jsx__WEBPACK_IMPORTED_MODULE_11__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_greeting_greeting_container__WEBPACK_IMPORTED_MODULE_1__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_9__["Route"], {
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_modal_modal_jsx__WEBPACK_IMPORTED_MODULE_11__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("header", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_greeting_greeting_container__WEBPACK_IMPORTED_MODULE_1__["default"], null)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_9__["Switch"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_9__["Route"], {
     exact: true,
     path: "/",
     component: _greeting_homepage_container__WEBPACK_IMPORTED_MODULE_6__["default"]
@@ -354,7 +354,7 @@ var App = function App() {
     exact: true,
     path: "/upload",
     component: _videos_video_upload_container__WEBPACK_IMPORTED_MODULE_4__["default"]
-  }));
+  })));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (App);
@@ -379,7 +379,7 @@ __webpack_require__.r(__webpack_exports__);
   var currentUser = _ref.currentUser,
       logoutUser = _ref.logoutUser,
       openModal = _ref.openModal;
-  // debugger; // check props
+  // ; // check props
   var display = currentUser ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     "class": "nav-links"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -463,7 +463,7 @@ __webpack_require__.r(__webpack_exports__);
 }); // import React from 'react';
 // import { Link } from 'react-router-dom';
 // export default ({ currentUser, logoutUser, openModal }) => {
-//   // debugger; // check props
+//   // ; // check props
 //   const display = currentUser ? (
 //     <div class="nav-links">
 //       <div class='left-side'>
@@ -586,7 +586,6 @@ function (_React$Component) {
 
     _this = _possibleConstructorReturn(this, _getPrototypeOf(HomePage).call(this, props));
     _this.demoUser = _this.demoUser.bind(_assertThisInitialized(_this));
-    debugger;
     return _this;
   }
 
@@ -796,7 +795,7 @@ __webpack_require__.r(__webpack_exports__);
 // import SessionForm from './session_form';
 // import { login } from '../../actions/session_actions';
 // const msp = (state, ownProps) => {
-//   // debugger
+//   // 
 //   return {
 //     errors: state.errors.session,
 //     formType: 'login'
@@ -1045,7 +1044,7 @@ __webpack_require__.r(__webpack_exports__);
 // import SessionForm from './session_form';
 // import { signup } from '../../actions/session_actions';
 // const msp = (state, ownProps) => {
-//   // debugger
+//   // 
 //   return {
 //     errors: state.errors.session,
 //     formType: 'signup'
@@ -1140,7 +1139,6 @@ function (_React$Component) {
     key: "componentDidMount",
     value: function componentDidMount() {
       this.props.fetchVideos();
-      debugger;
     }
   }, {
     key: "render",
@@ -1150,14 +1148,47 @@ function (_React$Component) {
       }
 
       var videos = this.props.videos;
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        "class": "video-index-wrapper"
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        "class": "master-index"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        "class": "vindex-box"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        "class": "playlist-title"
+      }, "Spooky videos, hand chosen to scare you silly"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        "class": "bottom-box"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        "class": "logo-box"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        "class": "staff-pick",
+        src: "/staff_pick.png",
+        alt: ""
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        "class": "vm-box"
       }, videos.map(function (video) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_video_index_item__WEBPACK_IMPORTED_MODULE_1__["default"], {
           video: video,
           key: video.id
         });
-      })));
+      })))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        "class": "vindex-box"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        "class": "playlist-title"
+      }, "Spooky videos, hand chosen to scare you silly"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        "class": "bottom-box"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        "class": "logo-box"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        "class": "staff-pick",
+        src: "/staff_pick.png",
+        alt: ""
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        "class": "vm-box"
+      }, videos.map(function (video) {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_video_index_item__WEBPACK_IMPORTED_MODULE_1__["default"], {
+          video: video,
+          key: video.id
+        });
+      })))));
     }
   }]);
 
@@ -1220,70 +1251,20 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var VideoIndexItem = function VideoIndexItem(props) {
-  debugger;
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    "class": "video-index-wraps"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     "class": "video-index-item"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
     to: "watch/".concat(props.video.id)
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+    "class": "thumbnail",
     src: props.video.thumbnailUrl
-  })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, props.video.uploader.username), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, props.video.title)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    "class": "video-index-item"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-    to: "watch/".concat(props.video.id)
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-    src: props.video.thumbnailUrl
-  })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, props.video.uploader.username), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, props.video.title)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    "class": "video-index-item"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-    to: "watch/".concat(props.video.id)
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-    src: props.video.thumbnailUrl
-  })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, props.video.uploader.username), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, props.video.title)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    "class": "video-index-item"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-    to: "watch/".concat(props.video.id)
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-    src: props.video.thumbnailUrl
-  })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, props.video.uploader.username), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, props.video.title)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    "class": "video-index-item"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-    to: "watch/".concat(props.video.id)
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-    src: props.video.thumbnailUrl
-  })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, props.video.uploader.username), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, props.video.title)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    "class": "video-index-item"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-    to: "watch/".concat(props.video.id)
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-    src: props.video.thumbnailUrl
-  })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, props.video.uploader.username), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, props.video.title)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    "class": "video-index-item"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-    to: "watch/".concat(props.video.id)
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-    src: props.video.thumbnailUrl
-  })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, props.video.uploader.username), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, props.video.title)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    "class": "video-index-item"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-    to: "watch/".concat(props.video.id)
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-    src: props.video.thumbnailUrl
-  })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, props.video.uploader.username), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, props.video.title)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    "class": "video-index-item"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-    to: "watch/".concat(props.video.id)
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-    src: props.video.thumbnailUrl
-  })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, props.video.uploader.username), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, props.video.title)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    "class": "video-index-item"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-    to: "watch/".concat(props.video.id)
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-    src: props.video.thumbnailUrl
-  })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, props.video.uploader.username), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, props.video.title)));
+  })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    "class": "video-index-title"
+  }, props.video.title), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    "class": "video-index-username"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+    "class": "fas fa-user-circle"
+  }, " "), " ", props.video.uploader.username));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (VideoIndexItem);
@@ -1337,7 +1318,7 @@ function (_React$Component) {
   _createClass(VideoShow, [{
     key: "componentDidMount",
     value: function componentDidMount() {
-      // debugger
+      // 
       this.props.fetchVideo(this.props.match.params.videoId);
     }
   }, {
@@ -1393,7 +1374,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var msp = function msp(state, ownProps) {
-  // debugger
+  // 
   return {
     video: state.entities.videos[ownProps.match.params.videoId]
   };

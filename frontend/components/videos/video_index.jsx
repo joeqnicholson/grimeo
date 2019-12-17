@@ -5,7 +5,7 @@ class VideoIndex extends React.Component{
 
     componentDidMount(){
         this.props.fetchVideos();
-        debugger
+        
     }
     render(){
         if(!this.props.videos){
@@ -13,15 +13,40 @@ class VideoIndex extends React.Component{
           }
         const { videos } = this.props;
         return(
-            <div>
-                <div class='video-index-wrapper'>
-                    {
-                        videos.map(video=>(
-                            <VideoIndexItem
-                            video={video}
-                            key={video.id}/>
-                        ))
-                    }
+            <div class='master-index'>
+                <div class='vindex-box'>
+                    <div class='playlist-title'>Spooky videos, hand chosen to scare you silly</div>
+                        <div class='bottom-box'>
+                            <div class='logo-box'>
+                            <img class='staff-pick' src="/staff_pick.png" alt=""/>
+                            </div>
+                            <div class='vm-box'>
+                                {
+                                    videos.map(video=>(
+                                        <VideoIndexItem
+                                        video={video}
+                                        key={video.id}/>
+                                    ))
+                                }
+                            </div>
+                        </div>
+                </div>
+                <div class='vindex-box'>
+                    <div class='playlist-title'>Spooky videos, hand chosen to scare you silly</div>
+                        <div class='bottom-box'>
+                            <div class='logo-box'>
+                            <img class='staff-pick' src="/staff_pick.png" alt=""/>
+                            </div>
+                            <div class='vm-box'>
+                                {
+                                    videos.map(video=>(
+                                        <VideoIndexItem
+                                        video={video}
+                                        key={video.id}/>
+                                    ))
+                                }
+                            </div>
+                        </div>
                 </div>
             </div>
         );

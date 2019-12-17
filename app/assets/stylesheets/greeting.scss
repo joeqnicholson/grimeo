@@ -19,7 +19,7 @@
 
 .logo{
     font-family: 'Black Rose', arial;
-    color: rgb(43, 98, 116);;
+    color: var(--main-color);
     text-decoration: none;
     font-size: 55px;
     padding: 0px;
@@ -48,7 +48,7 @@
     font-family: Arial, Helvetica, sans-serif;
     font-size: 15px;
     padding: 16px;
-    color: rgb(43, 98, 116);;
+    color: var(--main-color);
 }
 .watch{
     background-color: transparent;
@@ -56,7 +56,7 @@
     font-family: Arial, Helvetica, sans-serif;
     font-size: 15px;
     padding: 16x;
-    color: rgb(43, 98, 116);
+    color: var(--main-color);
     margin-top: 1px;
 }
 .logged-in-watch{
@@ -65,7 +65,7 @@
     font-family: Arial, Helvetica, sans-serif;
     font-size: 15px;
     padding: 16x;
-    color: rgb(43, 98, 116);;
+    color: var(--main-color);
     margin-top: 7px;
     margin-left: 10px;
     font-weight: bold;
@@ -76,8 +76,8 @@
     font-family: Arial, Helvetica, sans-serif;
     font-size: 16px;
     padding: 12px;
-    color: rgb(43, 98, 116);;
-    border: solid 0.5px rgb(43, 98, 116);;
+    color: var(--main-color);
+    border: solid 0.5px var(--main-color);
     border-radius: 3px;
     margin-left: 20px;
     font-weight: bold;
@@ -90,7 +90,7 @@
     border-color: rgb(45, 54, 59);
 }
 .upload{
-    background-color: rgb(43, 98, 116);;
+    background-color: var(--main-color);
     border: none;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 15px;
@@ -126,7 +126,7 @@
     background-color: rgb(45, 54, 59);
 }
 .user-dropdown{
-    background-color: rgb(43, 98, 116);;
+    background-color: var(--main-color);
     border: none;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 15px;
@@ -161,7 +161,7 @@ padding: 12px;
     position: relative;
 }
 .dropdown-user{
-    color: rgb(148, 148, 148);
+    color: var(--main-color);
     text-decoration: none;
     font-family: Arial, Helvetica, sans-serif;
     padding: 15px;

@@ -19,7 +19,7 @@
     height: 55px;
   }
   .log-sign-button{
-    background-color: rgb(43, 98, 116);;
+    background-color: var(--main-color);
     border: none;
     color: rgb(255, 255, 255);
     font-weight: bold;
@@ -34,7 +34,7 @@
   }
 
   .log-sign-button:hover{
-      background-color: rgb(45, 54, 59);
+      background-color: var(--main-hover)
   }
   .log-sign-button-demo:hover{
     background-color: rgb(47, 65, 58);
@@ -62,7 +62,7 @@
 }
 .close-x{
   background-color: transparent;
-  color: rgb(43, 98, 116);;
+  color: var(--main-color);
   border: none;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 20px;
@@ -90,7 +90,7 @@ justify-content: center;
   background-color: transparent;
   border: none;
   font-family: Arial, Helvetica, sans-serif;
-  color: rgb(43, 98, 116);;
+  color: var(--main-color);
   font-size: 14px;
 }
 .other-form-link:hover{

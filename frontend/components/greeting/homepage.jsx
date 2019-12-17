@@ -4,7 +4,7 @@ class HomePage extends React.Component{
     constructor(props){
         super(props)
         this.demoUser = this.demoUser.bind(this)
-        debugger
+        
     }
     demoUser(){
         function randomStr(len, arr) { 

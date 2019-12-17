@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 export default ({ currentUser, logoutUser, openModal }) => {
-  // debugger; // check props
+  // ; // check props
   const display = currentUser ? (
     <div class="nav-links">
       
@@ -99,7 +99,7 @@ export default ({ currentUser, logoutUser, openModal }) => {
 // import { Link } from 'react-router-dom';
 
 // export default ({ currentUser, logoutUser, openModal }) => {
-//   // debugger; // check props
+//   // ; // check props
 //   const display = currentUser ? (
 //     <div class="nav-links">
       

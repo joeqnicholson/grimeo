@@ -1,22 +1,60 @@
-.video-index-wrapper{
+.master-index{
     display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.playlist-title{
+    width: 100%;
+    font-size: 27px;
+    margin-left: 65px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+.vindex-box{
+    display: flex;
+    flex-direction: column;
+    // border: solid 1px black;
+    width: 100%;
+    margin-left: 50px;
+    margin-right: 50px;
+
+}
+.bottom-box{
+    display: flex;
+    flex-direction: row;
 }
 
-.video-index-wraps{
+.logo-box{
+    width: 17%;
+    // border: solid 1px black;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+.vm-box{
+    // border: solid 1px var(--main-color);
     display: flex;
     flex-wrap: wrap;
-    flex-direction: row;
-    flex-grow: 1;
-    flex-shrink: 1;
-    flex-basis: 1;
-
+    width: 83%;
 }
 .video-index-item{
     width: 262px;
     height: 179px;
-padding: 0 10px;
+    padding: 0 10px;
 }
-img{
+.video-index-username{
+    font-size: 12px;
+}
+.video-index-title{
+    font-size: 13.5px;
+    font-weight: bold;
+}
+.staff-pick{
+    width: 202px;
+    height: 316px;
+    border-radius: 3px;
+}
+.thumbnail{
     width: 244.37px;
     height: 137.51px
 }
