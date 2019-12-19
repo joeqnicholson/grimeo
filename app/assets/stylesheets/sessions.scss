@@ -21,14 +21,14 @@
   .log-sign-button{
     background-color: var(--main-color);
     border: none;
-    color: rgb(255, 255, 255);
+    color: (54, 109, 88);
     font-weight: bold;
     font-size: 16px;
   }
   .log-sign-button-demo{
-    background-color: rgb(54, 109, 88);
+    background-color: var(--secondary-color);
     border: none;
-    color: rgb(255, 255, 255);
+    color: var(--button-text);
     font-weight: bold;
     font-size: 16px;
   }
@@ -37,10 +37,10 @@
       background-color: var(--main-hover)
   }
   .log-sign-button-demo:hover{
-    background-color: rgb(47, 65, 58);
+    background-color: var(--secondary-color)
   }
   .login-join-titles{
-    font-family: Arial, Helvetica, sans-serif;
+    
     font-size: 20px;
     font-weight: 700;
     text-align: center;
@@ -64,7 +64,7 @@
   background-color: transparent;
   color: var(--main-color);
   border: none;
-  font-family: Arial, Helvetica, sans-serif;
+  
   font-size: 20px;
   font-weight: bold;
   float: right;
@@ -75,11 +75,11 @@ display: flex;
 justify-content: center;
 }
 .error{
-  font-family: Arial, Helvetica, sans-serif;
-  color: rgb(141, 141, 141);
+  
+  color: rgb(206, 99, 36);
   font-size: .875rem;
-  padding-top: 20px;
-  padding-bottom: 20px;
+  padding-top: 14px;
+  padding-bottom: 14px;
 }
 .or{
   display: flex;
@@ -89,7 +89,7 @@ justify-content: center;
 .other-form-link{
   background-color: transparent;
   border: none;
-  font-family: Arial, Helvetica, sans-serif;
+  
   color: var(--main-color);
   font-size: 14px;
 }
@@ -113,7 +113,6 @@ justify-content: center;
   margin: 20px 0px 10px;
 }
 
-  
 .placeholder{
   color: rgb(77, 0, 0);
 }

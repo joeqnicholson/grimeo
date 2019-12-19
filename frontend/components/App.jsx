@@ -2,6 +2,7 @@ import React from 'react';
 import GreetingContainer from './greeting/greeting_container';
 import VideoIndexContainer from './videos/video_index_container';
 import VideoShowContainer from './videos/video_show_container';
+import UserVideoContainer from './videos/user_video_container';
 import VideoUploadContainer from './videos/video_upload_container';
 import HomePage from './greeting/homepage';
 import HomePageContainer from './greeting/homepage_container';
@@ -26,6 +27,7 @@ const App = () => {
         <Route exact path="/watch" component={VideoIndexContainer}/>
         <Route exact path="/watch/:videoId" component={VideoShowContainer}/>
         <Route exact path="/upload" component={VideoUploadContainer}/>
+        <Route exact path="/user/:userId" component={UserVideoContainer}/>
       </Switch>
     </div>
   );

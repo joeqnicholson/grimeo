@@ -4,10 +4,11 @@ export const LOGOUT_CURRENT_USER = 'LOGOUT_CURRENT_USER';
 export const RECEIVE_ERRORS = 'RECEIVE_ERRORS';
 
 
-const receiveCurrentUser = (user) => {
+const receiveCurrentUser = (payload) => {
+  debugger
   return {
     type: RECEIVE_CURRENT_USER,
-    user
+    user: payload.user
   };
 };
 
@@ -27,7 +28,7 @@ const receiveErrors = ({ responseJSON }) => {
 export const login = (formUser) => (dispatch) => {
   return APIUtil.login(formUser)
   .then(
-    user => dispatch(receiveCurrentUser(user)), 
+    payload => dispatch(receiveCurrentUser(payload)), 
     errors => {dispatch(receiveErrors(errors));
     }
   );
@@ -36,7 +37,7 @@ export const login = (formUser) => (dispatch) => {
 export const signup = (formUser) => (dispatch) => {
   return APIUtil.signup(formUser)
     .then(
-      user => dispatch(receiveCurrentUser(user)),
+      payload => dispatch(receiveCurrentUser(payload)),
       errors => dispatch(receiveErrors(errors))
     );
 };

@@ -1,7 +1,11 @@
 body{
-    background-color: rgb(26, 26, 26);
-    --main-color: rgb(43, 98, 116);;
-    --main-hover: rgb(45, 54, 59);
+    background-color: rgb(32, 32, 32);
+    --main-color: rgb(54, 93, 109);
+    --main-hover: rgb(49, 66, 77);
+    --secondary-color: rgb(54, 109, 88);
+    --secondary-hover: rgb(47, 70, 61);
+    --button-text: rgb(219, 212, 212);
+    
 }
 
 // a{
@@ -18,9 +22,13 @@ button:hover{
 button{
     outline: none;
 }
+.player{
+    outline: none;
+
+}
 div, span{
     font-family: Arial, Helvetica, sans-serif;
-    color: rgb(220, 222, 226);
+    color: rgb(221, 225, 235);
     font-size: .875rem;
 }
 

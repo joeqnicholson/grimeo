@@ -7,13 +7,13 @@ export default ({ currentUser, logoutUser, openModal }) => {
     <div class="nav-links">
       
       <div class='left-side'>
-        <div>
+        {/* <div>
           <Link to={`/watch`}>
             <button class='logged-in-watch'>
               Watch
             </button>
           </Link>
-          </div>
+          </div> */}
       </div>
       <div class='right-side'>
         <div class='search'><input class='greet-search'type="text" placeholder='Search'/></div>
@@ -26,9 +26,9 @@ export default ({ currentUser, logoutUser, openModal }) => {
           </div>
         </div>
           
-        <div><button class='upload'><i class="fas fa-cloud-upload-alt"></i> 
-        <Link to={`/upload`} class='upload-link'> Upload</Link>
-        </button></div>
+        <div><Link to={`/upload`} > <button class='upload upload-link'> <i class="fas fa-cloud-upload-alt">{` `}</i> Upload
+         
+        </button></Link></div>
       </div>
     </div>
     
@@ -60,7 +60,7 @@ export default ({ currentUser, logoutUser, openModal }) => {
       </div>
       {display}
     </div>
-  )
+  )  
 };
 
 

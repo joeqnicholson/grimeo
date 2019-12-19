@@ -14,7 +14,7 @@
     justify-content: center;
     align-items: center;
     margin-top: 75px;
-    color: rgb(43, 98, 116);
+    color: var(--main-color);
 }
 .homepage-buttons{
     display: flex;
@@ -22,9 +22,9 @@
     width: 305px;
 }
 .homepage-button-demo{
-    background-color: rgb(43, 98, 116);;
+    background-color: var(--main-color);;
     border: none;
-    font-family: Arial, Helvetica, sans-serif;
+    
     font-size: 15px;
     padding: 12px 18px;
     color: white;
@@ -34,12 +34,11 @@
     // margin-right: 
 }
 .homepage-button-demo:hover{
-    background-color: rgb(45, 54, 59);
+    background-color: var(--main-hover);
 }
 .homepage-button-signup{
     background-color: transparent;
     border: 1px solid rgb(88, 85, 80);
-    font-family: Arial, Helvetica, sans-serif;
     font-size: 15px;
     padding: 12px 18px;
     color: white;

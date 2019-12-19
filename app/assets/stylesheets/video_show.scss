@@ -9,15 +9,107 @@
     margin: auto;
     height: 100%;
 }
+.video-bottom-master{
+    display: flex;
+    justify-content: center;
+}
+.video-bottom{
+    padding: 0px 40px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 70%;
+}
 .video-information{
-    margin-left: 40px;
+    width: 70%;
+}
+.top-info{
+    padding-top: 20px;
+    border-bottom: solid 1px rgb(54, 53, 53);
+    padding-bottom: 20px;
+}
+.vid-show-date{
+    padding-top: 15px;
+    padding-bottom: 15px;
+    font-size: 14px;
+    color: rgb(114, 114, 114);
 }
 .vid-title{
     font-size: 36px;
-    border-bottom: solid 1px rgb(54, 53, 53);
     color: var(--main-color);
 }
 .vid-description{
     font-size: 14px;
     color: rgb(255, 255, 255);
+}
+.video-show-username{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+}
+.user-show-link{
+    padding-left: 12px;
+}
+.user-link{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.up-next-bar{
+    width: 30%;
+    padding: 30px;
+    border-left: solid 1px rgb(54, 53, 53);
+}
+.sidebar-index-item{
+    width: 294px;
+    height: 76px;
+    display: flex;
+    flex-direction: row;
+    padding-bottom: 15px;
+}
+.video-index-info-container-sidebar{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-left: 20px;
+
+}
+.image-container-sidebar{
+    width: 130px;
+    height: 73px;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+}
+.thumbnail-sidebar{
+    width: auto;
+    max-width: 100%;
+    height: 73px;
+}
+.video-index-username-sidebar{
+    padding-bottom: 16px;
+    font-weight: 600;
+    font-size: 14px;
+    color: rgb(114, 114, 114);
+}
+.video-index-username-sidebar:hover{
+    color: rgb(88, 72, 61);
+}
+.video-index-title-sidebar{
+    padding-top: 16px;
+    font-weight: 500;
+    font-size: 16;
+}
+.video-index-title-link-sidebar{
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    font-weight: 500;
+}
+.video-index-title-link-sidebar:hover{
+    color: var(--main-color)
+}
+.this-is-an-icon{
+    font-size: 30px;
 }
