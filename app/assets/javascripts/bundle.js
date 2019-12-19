@@ -1056,8 +1056,10 @@ function (_React$Component) {
         value: this.state.username
       })) : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         "class": "session-input",
-        type: "email",
-        placeholder: "Email"
+        type: "text",
+        placeholder: "First and last name",
+        onChange: this.updateState('username'),
+        value: this.state.username
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         "class": "session-input",
         type: "password",
