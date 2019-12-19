@@ -137,7 +137,6 @@ var LOGOUT_CURRENT_USER = 'LOGOUT_CURRENT_USER';
 var RECEIVE_ERRORS = 'RECEIVE_ERRORS';
 
 var receiveCurrentUser = function receiveCurrentUser(payload) {
-  debugger;
   return {
     type: RECEIVE_CURRENT_USER,
     user: payload.user
@@ -444,16 +443,14 @@ __webpack_require__.r(__webpack_exports__);
     onClick: function onClick() {
       return openModal('signup');
     }
-  }, "Join")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    "class": "join"
+  }, "Join"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
     "class": "login",
     onClick: function onClick() {
       return openModal('login');
     }
-  }, "Log in")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-    to: "/watch"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-    "class": "watch"
-  }, "Watch")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  }, "Log in")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     "class": "right-side"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     "class": "search"

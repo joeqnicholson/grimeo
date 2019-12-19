@@ -35,14 +35,14 @@ export default ({ currentUser, logoutUser, openModal }) => {
   ) : (
     <div class="nav-links">
       <div class='left-side'>
-       <div><button class='signup' onClick={() => openModal('signup')}>Join</button></div>
+       <div><button class='signup' onClick={() => openModal('signup')}><div class='join'>Join</div></button></div>
        <div><button class='login' onClick={() => openModal('login')}>Log in</button></div>
        <div>
-        <Link to={`/watch`}>
+        {/* <Link to={`/watch`}>
          <button class='watch'>
            Watch
            </button>
-         </Link>
+         </Link> */}
        </div>
       </div>  
        

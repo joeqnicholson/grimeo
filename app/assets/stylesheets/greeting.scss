@@ -81,6 +81,12 @@
     width: 71px;
     height: 40px;
 }
+.join{
+    font-size: 16px;
+    color: var(--main-color);
+    font-weight: bold;
+    top: 7px;
+}
 .signup:hover{
     border-color: var(--main-hover);
 }

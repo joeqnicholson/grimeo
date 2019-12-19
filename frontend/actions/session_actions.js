@@ -5,7 +5,7 @@ export const RECEIVE_ERRORS = 'RECEIVE_ERRORS';
 
 
 const receiveCurrentUser = (payload) => {
-  debugger
+  
   return {
     type: RECEIVE_CURRENT_USER,
     user: payload.user
