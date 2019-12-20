@@ -1870,7 +1870,7 @@ var UserVideoIndexItem = function UserVideoIndexItem(props) {
     to: "/watch/".concat(props.video.id)
   }, " ", props.video.title)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     "class": "views-date-index"
-  }, props.video.plays, " views - 6 days ago")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  }, props.video.plays, " views - today")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     "class": "video-index-username"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
     "class": "user-link",
@@ -2068,7 +2068,7 @@ var VideoIndexItem = function VideoIndexItem(props) {
     to: "watch/".concat(props.video.id)
   }, props.video.title)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     "class": "views-date-index"
-  }, " ", props.video.plays, " views - 6 days ago")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  }, " ", props.video.plays, " views - today")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     "class": "video-index-username"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
     "class": "user-link",
@@ -52761,7 +52761,7 @@ function warning(message) {
 /*!***************************************************************!*\
   !*** ./node_modules/react-router-dom/esm/react-router-dom.js ***!
   \***************************************************************/
-/*! exports provided: MemoryRouter, Prompt, Redirect, Route, Router, StaticRouter, Switch, __RouterContext, generatePath, matchPath, useHistory, useLocation, useParams, useRouteMatch, withRouter, BrowserRouter, HashRouter, Link, NavLink */
+/*! exports provided: BrowserRouter, HashRouter, Link, NavLink, MemoryRouter, Prompt, Redirect, Route, Router, StaticRouter, Switch, __RouterContext, generatePath, matchPath, useHistory, useLocation, useParams, useRouteMatch, withRouter */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
