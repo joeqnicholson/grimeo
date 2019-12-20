@@ -2,7 +2,6 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const VideoIndexItem=props=>{
-    debugger 
     return(
             <div class='video-index-item'>
                 <div class='grimeo-staff-pick'><span class='added'>Added to</span> Grimeo Staff Picks</div>

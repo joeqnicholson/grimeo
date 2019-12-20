@@ -522,7 +522,6 @@ function (_React$Component) {
       var _this3 = this;
 
       e.preventDefault();
-      debugger;
       var comment = Object.assign({}, this.state);
       this.props.createComment(comment).then(function () {
         return _this3.setState({
@@ -803,8 +802,10 @@ function (_React$Component) {
       }, "Cancel"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         "class": "rememeber"
       }, "Remember to be cool and play nice!"))))) : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        "class": "edit-instead"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, this.state.body)));
+        "class": "comment-body"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        "class": "comment-body"
+      }, this.state.body)));
     }
   }]);
 
@@ -2047,7 +2048,6 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var VideoIndexItem = function VideoIndexItem(props) {
-  debugger;
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     "class": "video-index-item"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {

@@ -58,8 +58,8 @@ class EditCommentForm extends React.Component{
                         </div>
                 </div>
                 :
-                <div class='edit-instead'>
-                    <div>{this.state.body}</div>
+                <div class='comment-body'>
+                    <div class='comment-body'>{this.state.body}</div>
                 </div>
 
                 }
