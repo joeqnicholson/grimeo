@@ -19,7 +19,7 @@ class Api::VideosController < ApplicationController
     def create
         @video = Video.new(video_params)
         @video.user_id = current_user.id
-        unless(@video.plays > 0)
+        unless(@video.plays)
           @video.plays = 1
         end
     
