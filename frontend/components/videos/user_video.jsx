@@ -23,8 +23,8 @@ class UserVideo extends React.Component{
             <div class='video-index-page'>
                 <div class='left-column'>
                     <div class='left-column-item-wrapper'>
-                        <div class='upload-wrapper'>
-                        <button class='side-bar-upload'><Link class='left-column-upload-link' to={'/upload'}>Upload</Link></button>
+                    <div class='upload-wrapper'>
+                        <Link class='' to={'/upload'}><button class='side-bar-upload left-column-upload-link'>Upload</button></Link>
                         </div>
                         <div class='side-bar-items'>
                             <button class='side-bar-button'>

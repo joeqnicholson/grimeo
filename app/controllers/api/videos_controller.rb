@@ -3,6 +3,7 @@ class Api::VideosController < ApplicationController
         @video = Video.find(params[:id])
         render :show
     end
+    
     def index
         @videos = Video.all
         render :index

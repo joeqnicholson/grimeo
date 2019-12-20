@@ -10,6 +10,7 @@ const CommentsReducer=(state={},action)=>{
             return Object.assign({}, state, {[action.comment.id]: action.comment} );
         case REMOVE_COMMENT:
             let news = Object.assign({}, state);
+            debugger
             delete news[action.commentId];
             return news;
         case RECEIVE_VIDEO:
