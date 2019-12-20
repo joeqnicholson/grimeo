@@ -11,7 +11,7 @@ const VideoIndexItem=props=>{
                 </div>
                 <div class='video-index-info'>
                     <div class='video-index-title'> <Link class='video-index-title-link'to={`watch/${props.video.id}`}>{props.video.title}</Link></div>
-                    <div class='views-date-index'> {props.video.id} views - 6 days ago</div>    
+                    <div class='views-date-index'> {props.video.plays} views - 6 days ago</div>    
                 </div>
                     <div class='video-index-username'>
                         <Link class='user-link' to={`/user/${props.video.uploader.id}`}>

@@ -1060,7 +1060,7 @@ function (_React$Component) {
 
       var str = "1234567890qwertyuiopasdfghjklzxcvbnm";
       this.props.signup({
-        username: 'Ada Lovelace' + randomStr(10, str),
+        username: 'Ada Lovelace ' + randomStr(5, str),
         password: 'password'
       });
     }
@@ -2070,7 +2070,7 @@ var VideoIndexItem = function VideoIndexItem(props) {
     to: "watch/".concat(props.video.id)
   }, props.video.title)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     "class": "views-date-index"
-  }, " ", props.video.id, " views - 6 days ago")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  }, " ", props.video.plays, " views - 6 days ago")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     "class": "video-index-username"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
     "class": "user-link",
