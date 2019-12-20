@@ -1878,7 +1878,7 @@ var UserVideoIndexItem = function UserVideoIndexItem(props) {
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
     "class": "fas fa-user-circle"
   }, " "), " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    "class": "user-index-username"
+    "class": "user-index-username user-link"
   }, props.user.username))));
 };
 

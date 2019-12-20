@@ -14,7 +14,7 @@ const UserVideoIndexItem=props=>{
                 </div>
                     <div class='video-index-username'>
                         <Link class='user-link' to={`/user/${props.user.id}`}>
-                            <i class='fas fa-user-circle'> </i> <div class='user-index-username'>{props.user.username}</div>
+                            <i class='fas fa-user-circle'> </i> <div class='user-index-username user-link'>{props.user.username}</div>
                         </Link>
                     </div>
             </div>
