@@ -733,12 +733,12 @@ function (_React$Component) {
       id: _this.props.comment.id,
       user_id: _this.props.userId,
       video_id: _this.props.videoId,
-      body: '',
-      edited: false
+      body: _this.props.comment.body,
+      closeForm: false
     };
     _this.handleSubmit = _this.handleSubmit.bind(_assertThisInitialized(_this));
     _this.updateState = _this.updateState.bind(_assertThisInitialized(_this));
-    _this.edited = _this.edited.bind(_assertThisInitialized(_this));
+    _this.closeForm = _this.closeForm.bind(_assertThisInitialized(_this));
     return _this;
   }
 
@@ -752,11 +752,11 @@ function (_React$Component) {
       };
     }
   }, {
-    key: "edited",
-    value: function edited(_boolean) {
+    key: "closeForm",
+    value: function closeForm(_boolean) {
       this.setState(function () {
         return {
-          edited: _boolean
+          closeForm: _boolean
         };
       });
     }
@@ -765,7 +765,7 @@ function (_React$Component) {
     value: function handleSubmit(e) {
       e.preventDefault();
       var comment = Object.assign({}, this.state);
-      this.props.updateComment(comment).then(this.edited(true));
+      this.props.updateComment(comment).then(this.closeForm(true));
     }
   }, {
     key: "render",
@@ -774,7 +774,7 @@ function (_React$Component) {
 
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         "class": "edit-form-master"
-      }, this.state.edited === false ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, this.state.closeForm === false ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         "class": "comment-form-wrapper"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         "class": "comment-form-user-icon-box"
@@ -797,11 +797,9 @@ function (_React$Component) {
       }, "Edit"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         "class": "cancel-edit",
         onClick: function onClick() {
-          return _this3.edited(true);
+          return _this3.closeForm(true);
         }
-      }, "Cancel"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        "class": "rememeber"
-      }, "Remember to be cool and play nice!"))))) : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, "Cancel"))))) : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         "class": "comment-body"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         "class": "comment-body"

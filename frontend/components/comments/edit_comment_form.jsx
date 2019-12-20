@@ -8,26 +8,26 @@ class EditCommentForm extends React.Component{
             id: this.props.comment.id,
             user_id: this.props.userId,
             video_id: this.props.videoId,
-            body: '', 
-            edited : false
+            body: this.props.comment.body, 
+            closeForm : false
             }
         this.handleSubmit = this.handleSubmit.bind(this)
         this.updateState = this.updateState.bind(this)
-        this.edited = this.edited.bind(this)
+        this.closeForm = this.closeForm.bind(this)
     }
     updateState(field) {
         return (e) => {
           this.setState({ [field]: e.target.value });
         };
       }
-    edited(boolean){
-        this.setState(()=>({edited: boolean}))
+    closeForm(boolean){
+        this.setState(()=>({closeForm: boolean}))
     }
     handleSubmit(e){
         e.preventDefault();
 
         const comment = Object.assign({}, this.state);
-        this.props.updateComment(comment).then(this.edited(true))
+        this.props.updateComment(comment).then(this.closeForm(true))
     }
 
 
@@ -35,7 +35,7 @@ class EditCommentForm extends React.Component{
         return(
             <div class='edit-form-master'>
                 {
-                    this.state.edited === false ? 
+                    this.state.closeForm === false ? 
                     <div class='comment-form-wrapper'>
                         <div class='comment-form-user-icon-box'>
                             <div class='comment-form-user-icon'></div>
@@ -51,8 +51,7 @@ class EditCommentForm extends React.Component{
                                 
                                     <div class='add-comment-wrapper'>
                                         <button class='edit-comment-submit'type='submit' >Edit</button>
-                                        <button class='cancel-edit'onClick={()=>this.edited(true)}>Cancel</button>
-                                        <div class='rememeber'>Remember to be cool and play nice!</div>
+                                        <button class='cancel-edit'onClick={()=>this.closeForm(true)}>Cancel</button>
                                     </div>
                             </form>
                         </div>
