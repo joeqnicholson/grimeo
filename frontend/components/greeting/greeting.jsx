@@ -21,7 +21,7 @@ export default ({ currentUser, logoutUser, openModal }) => {
         <div><button class='user-dropdown'><i class="fas fa-skull"></i></button></div>
           <div class="dropdown-content">
             <div class='dropdown-user'>{currentUser.username}</div>
-            <a class='dropdown-link' href="#">Videos</a>
+            <Link class='dropdown-link'to={`/user/${currentUser.id}`}>Videos</Link>
             <a class='dropdown-link'href="#" onClick={logoutUser}>Log out</a>
           </div>
         </div>

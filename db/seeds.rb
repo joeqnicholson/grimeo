@@ -85,5 +85,5 @@ video_9.save!
 
 comment_1 = Comment.create!({:user_id => user_1.id, :body => 'I love Linus!!', :video_id => video_1.id})
 comment_2 = Comment.create!({:user_id => user_2.id, :body => 'I hate Linus!!', :video_id => video_1.id})
-comment_3 = Comment.create!({:user_id => user_4.id, :body => 'Go Batman!!', :video_id => video_2.id})
+comment_3 = Comment.create!({:user_id => user_4.id, :body => 'Go Batman!!', :video_id => video_3.id})
 comment_4 = Comment.create!({:user_id => user_3.id, :body => 'This is great!!', :video_id => video_3.id})

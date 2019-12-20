@@ -856,9 +856,9 @@ __webpack_require__.r(__webpack_exports__);
     "class": "dropdown-content"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     "class": "dropdown-user"
-  }, currentUser.username), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+  }, currentUser.username), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
     "class": "dropdown-link",
-    href: "#"
+    to: "/user/".concat(currentUser.id)
   }, "Videos"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
     "class": "dropdown-link",
     href: "#",
@@ -1869,7 +1869,7 @@ var UserVideoIndexItem = function UserVideoIndexItem(props) {
   }, " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
     "class": "video-index-title-link",
     to: "/watch/".concat(props.video.id)
-  }, props.video.title)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  }, " ", props.video.title)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     "class": "views-date-index"
   }, props.video.plays, " views - 6 days ago")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     "class": "video-index-username"
@@ -1878,7 +1878,9 @@ var UserVideoIndexItem = function UserVideoIndexItem(props) {
     to: "/user/".concat(props.user.id)
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
     "class": "fas fa-user-circle"
-  }, " "), " ", props.user.username)));
+  }, " "), " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    "class": "user-index-username"
+  }, props.user.username))));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (UserVideoIndexItem);
@@ -2045,6 +2047,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var VideoIndexItem = function VideoIndexItem(props) {
+  debugger;
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     "class": "video-index-item"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -2067,7 +2070,7 @@ var VideoIndexItem = function VideoIndexItem(props) {
     to: "watch/".concat(props.video.id)
   }, props.video.title)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     "class": "views-date-index"
-  }, props.video.plays, " views - 6 days ago")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  }, " ", props.video.id, " views - 6 days ago")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     "class": "video-index-username"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
     "class": "user-link",
