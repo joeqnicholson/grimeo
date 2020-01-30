@@ -13,17 +13,16 @@ const msp=(state, ownProps)=>{
         videos: Object.values(state.entities.videos),
         currentUser: user,
         comments: Object.values(state.entities.comments),
-        users: Object.values(state.entities.users)
     });
 }
 const mdp=dispatch=>({
     fetchVideo: videoId=>dispatch(fetchVideo(videoId)),
     fetchUser: userId=>dispatch(fetchUser(userId)),
     fetchVideos: ()=>dispatch(fetchVideos()),
+    fetchComments: ()=>dispatch(fetchComments()),
     deleteVideo: videoId=>dispatch(deleteVideo(videoId)),
     deleteComment: commentId=>dispatch(deleteComment(commentId)),
     createComment: comment=>dispatch(createComment(comment)),
     updateComment: comment=>dispatch(updateComment(comment))
-    // fetchComments: ()=>dispatch(fetchComments())
 })
 export default connect(msp,mdp)(VideoShow)

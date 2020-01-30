@@ -6,7 +6,9 @@ class Video < ApplicationRecord
 
     validates :title, :description, presence: true
 
-    
+    has_many :comment_user,
+    through: :comments,
+    source: :user
 
     belongs_to :uploader,
     primary_key: :id,

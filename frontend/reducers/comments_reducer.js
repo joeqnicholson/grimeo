@@ -4,13 +4,10 @@ import {RECEIVE_VIDEO} from '../actions/video_actions';
 const CommentsReducer=(state={},action)=>{
     Object.freeze(state);
     switch (action.type) {
-        case RECEIVE_ALL_COMMENTS:
-            return action.comments;
         case RECEIVE_COMMENT:
             return Object.assign({}, state, {[action.comment.id]: action.comment} );
         case REMOVE_COMMENT:
             let news = Object.assign({}, state);
-            debugger
             delete news[action.commentId];
             return news;
         case RECEIVE_VIDEO:

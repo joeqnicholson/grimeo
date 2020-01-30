@@ -25,9 +25,8 @@ class EditCommentForm extends React.Component{
     }
     handleSubmit(e){
         e.preventDefault();
-
         const comment = Object.assign({}, this.state);
-        this.props.updateComment(comment).then(this.closeForm(true))
+        this.props.updateComment(comment).then(this.closeForm(true)).then(this.props.editSwitch(false))
     }
 
 
@@ -50,7 +49,7 @@ class EditCommentForm extends React.Component{
                                 />
                                 
                                     <div class='add-comment-wrapper'>
-                                        <button class='edit-comment-submit'type='submit' >Edit</button>
+                                        <button class='edit-comment-submit'type='submit'>Edit</button>
                                         <button class='cancel-edit'onClick={()=>this.closeForm(true)}>Cancel</button>
                                     </div>
                             </form>

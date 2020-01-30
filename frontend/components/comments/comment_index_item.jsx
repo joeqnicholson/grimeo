@@ -47,8 +47,8 @@ class CommentIndexItem extends React.Component{
                                 videoId ={this.props.video.id}
                                 userId = {this.props.currentUser.id}
                                 updateComment = {this.props.updateComment}
+                                editSwitch = {this.editSwitch}
                                 key={this.props.comment.id}/>
-
                         </div>
                 }
                 

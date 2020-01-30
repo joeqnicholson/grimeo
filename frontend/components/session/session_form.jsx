@@ -22,7 +22,7 @@ class SessionForm extends React.Component {
       return ans; 
     } 
     const str = "1234567890qwertyuiopasdfghjklzxcvbnm"
-    this.props.signup({username: 'Ada Lovelace' + randomStr(10, str), password:'password'})
+    this.props.signup({username: 'Ada Lovelace ' + randomStr(5, str), password:'password'})
     .then(() => this.props.closeModal());
     this.props.closeModal();
   }

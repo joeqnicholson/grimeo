@@ -1,0 +1,21 @@
+.footer{
+    float: bottom;
+    width: 100%;
+    padding: 32px 32px 16px;
+    border-top: 1px solid rgb(24, 24, 24);
+    position: relative;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+}
+.footer-notes{
+    text-decoration: none;
+    color: rgb(65, 65, 65);
+    margin-left: 18px;
+    font-size: 13px;
+}
+.footer-wrap{
+    display: flex;
+    align-content: center;
+    
+}

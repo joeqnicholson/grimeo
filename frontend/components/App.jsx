@@ -1,5 +1,6 @@
 import React from 'react';
 import GreetingContainer from './greeting/greeting_container';
+import Footer from './greeting/footer';
 import VideoIndexContainer from './videos/video_index_container';
 import VideoShowContainer from './videos/video_show_container';
 import UserVideoContainer from './videos/user_video_container';
@@ -29,6 +30,7 @@ const App = () => {
         <Route exact path="/upload" component={VideoUploadContainer}/>
         <Route exact path="/user/:userId" component={UserVideoContainer}/>
       </Switch>
+      <Footer />
     </div>
   );
 }

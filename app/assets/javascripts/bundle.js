@@ -90,14 +90,13 @@
 /*!*********************************************!*\
   !*** ./frontend/actions/comment_actions.js ***!
   \*********************************************/
-/*! exports provided: RECEIVE_COMMENT, REMOVE_COMMENT, fetchComments, fetchComment, createComment, updateComment, deleteComment */
+/*! exports provided: RECEIVE_COMMENT, REMOVE_COMMENT, fetchComment, createComment, updateComment, deleteComment */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RECEIVE_COMMENT", function() { return RECEIVE_COMMENT; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "REMOVE_COMMENT", function() { return REMOVE_COMMENT; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchComments", function() { return fetchComments; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchComment", function() { return fetchComment; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "createComment", function() { return createComment; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "updateComment", function() { return updateComment; });
@@ -121,11 +120,6 @@ var removeComment = function removeComment(commentId) {
   };
 };
 
-var fetchComments = function fetchComments() {
-  return _util_comment_api_util__WEBPACK_IMPORTED_MODULE_0__["fetchComments"]().then(function (comments) {
-    return dispatch(fetchUsers(comments));
-  });
-};
 var fetchComment = function fetchComment(comment) {
   return function (dispatch) {
     return _util_comment_api_util__WEBPACK_IMPORTED_MODULE_0__["fetchComment"](comment).then(function (comment) {
@@ -397,17 +391,19 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _greeting_greeting_container__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./greeting/greeting_container */ "./frontend/components/greeting/greeting_container.jsx");
-/* harmony import */ var _videos_video_index_container__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./videos/video_index_container */ "./frontend/components/videos/video_index_container.js");
-/* harmony import */ var _videos_video_show_container__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./videos/video_show_container */ "./frontend/components/videos/video_show_container.js");
-/* harmony import */ var _videos_user_video_container__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./videos/user_video_container */ "./frontend/components/videos/user_video_container.js");
-/* harmony import */ var _videos_video_upload_container__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./videos/video_upload_container */ "./frontend/components/videos/video_upload_container.js");
-/* harmony import */ var _greeting_homepage__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./greeting/homepage */ "./frontend/components/greeting/homepage.jsx");
-/* harmony import */ var _greeting_homepage_container__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./greeting/homepage_container */ "./frontend/components/greeting/homepage_container.js");
-/* harmony import */ var _session_login_form_container__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./session/login_form_container */ "./frontend/components/session/login_form_container.js");
-/* harmony import */ var _session_signup_form_container__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./session/signup_form_container */ "./frontend/components/session/signup_form_container.js");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
-/* harmony import */ var _util_route_util__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../util/route_util */ "./frontend/util/route_util.jsx");
-/* harmony import */ var _modal_modal_jsx__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./modal/modal.jsx */ "./frontend/components/modal/modal.jsx");
+/* harmony import */ var _greeting_footer__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./greeting/footer */ "./frontend/components/greeting/footer.jsx");
+/* harmony import */ var _videos_video_index_container__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./videos/video_index_container */ "./frontend/components/videos/video_index_container.js");
+/* harmony import */ var _videos_video_show_container__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./videos/video_show_container */ "./frontend/components/videos/video_show_container.js");
+/* harmony import */ var _videos_user_video_container__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./videos/user_video_container */ "./frontend/components/videos/user_video_container.js");
+/* harmony import */ var _videos_video_upload_container__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./videos/video_upload_container */ "./frontend/components/videos/video_upload_container.js");
+/* harmony import */ var _greeting_homepage__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./greeting/homepage */ "./frontend/components/greeting/homepage.jsx");
+/* harmony import */ var _greeting_homepage_container__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./greeting/homepage_container */ "./frontend/components/greeting/homepage_container.js");
+/* harmony import */ var _session_login_form_container__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./session/login_form_container */ "./frontend/components/session/login_form_container.js");
+/* harmony import */ var _session_signup_form_container__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./session/signup_form_container */ "./frontend/components/session/signup_form_container.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+/* harmony import */ var _util_route_util__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../util/route_util */ "./frontend/util/route_util.jsx");
+/* harmony import */ var _modal_modal_jsx__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./modal/modal.jsx */ "./frontend/components/modal/modal.jsx");
+
 
 
 
@@ -424,27 +420,27 @@ __webpack_require__.r(__webpack_exports__);
  // import Logo from './grimeo-logo-1.png'
 
 var App = function App() {
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_modal_modal_jsx__WEBPACK_IMPORTED_MODULE_12__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("header", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_greeting_greeting_container__WEBPACK_IMPORTED_MODULE_1__["default"], null)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_10__["Switch"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_10__["Route"], {
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_modal_modal_jsx__WEBPACK_IMPORTED_MODULE_13__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("header", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_greeting_greeting_container__WEBPACK_IMPORTED_MODULE_1__["default"], null)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_11__["Switch"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_11__["Route"], {
     exact: true,
     path: "/",
-    component: _greeting_homepage_container__WEBPACK_IMPORTED_MODULE_7__["default"]
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_10__["Route"], {
+    component: _greeting_homepage_container__WEBPACK_IMPORTED_MODULE_8__["default"]
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_11__["Route"], {
     exact: true,
     path: "/watch",
-    component: _videos_video_index_container__WEBPACK_IMPORTED_MODULE_2__["default"]
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_10__["Route"], {
+    component: _videos_video_index_container__WEBPACK_IMPORTED_MODULE_3__["default"]
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_11__["Route"], {
     exact: true,
     path: "/watch/:videoId",
-    component: _videos_video_show_container__WEBPACK_IMPORTED_MODULE_3__["default"]
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_10__["Route"], {
+    component: _videos_video_show_container__WEBPACK_IMPORTED_MODULE_4__["default"]
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_11__["Route"], {
     exact: true,
     path: "/upload",
-    component: _videos_video_upload_container__WEBPACK_IMPORTED_MODULE_5__["default"]
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_10__["Route"], {
+    component: _videos_video_upload_container__WEBPACK_IMPORTED_MODULE_6__["default"]
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_11__["Route"], {
     exact: true,
     path: "/user/:userId",
-    component: _videos_user_video_container__WEBPACK_IMPORTED_MODULE_4__["default"]
-  })));
+    component: _videos_user_video_container__WEBPACK_IMPORTED_MODULE_5__["default"]
+  })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_greeting_footer__WEBPACK_IMPORTED_MODULE_2__["default"], null));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (App);
@@ -671,6 +667,7 @@ function (_React$Component) {
         videoId: this.props.video.id,
         userId: this.props.currentUser.id,
         updateComment: this.props.updateComment,
+        editSwitch: this.editSwitch,
         key: this.props.comment.id
       }))));
     }
@@ -765,7 +762,7 @@ function (_React$Component) {
     value: function handleSubmit(e) {
       e.preventDefault();
       var comment = Object.assign({}, this.state);
-      this.props.updateComment(comment).then(this.closeForm(true));
+      this.props.updateComment(comment).then(this.closeForm(true)).then(this.props.editSwitch(false));
     }
   }, {
     key: "render",
@@ -811,6 +808,42 @@ function (_React$Component) {
 }(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
 
 /* harmony default export */ __webpack_exports__["default"] = (EditCommentForm);
+
+/***/ }),
+
+/***/ "./frontend/components/greeting/footer.jsx":
+/*!*************************************************!*\
+  !*** ./frontend/components/greeting/footer.jsx ***!
+  \*************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+
+
+var Footer = function Footer() {
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    "class": "footer"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    "class": "footer-wrap"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+    "class": "footer-notes",
+    href: "https//:github.com/joeqnicholson"
+  }, "Github"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+    "class": "footer-notes",
+    href: "https://angel.co/joe-nicholson-5"
+  }, "AngelList"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+    "class": "footer-notes",
+    href: "https://www.linkedin.com/in/joseph-nicholson-312941165/"
+  }, "LinkedIn"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    "class": "footer-notes"
+  }, "Made with love in NYC")));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Footer);
 
 /***/ }),
 
@@ -1427,7 +1460,7 @@ function (_React$Component) {
 
       var str = "1234567890qwertyuiopasdfghjklzxcvbnm";
       this.props.signup({
-        username: 'Ada Lovelace' + randomStr(10, str),
+        username: 'Ada Lovelace ' + randomStr(5, str),
         password: 'password'
       }).then(function () {
         return _this2.props.closeModal();
@@ -2127,60 +2160,31 @@ function (_React$Component) {
   _inherits(VideoShow, _React$Component);
 
   function VideoShow(props) {
-    var _this;
-
     _classCallCheck(this, VideoShow);
 
-    _this = _possibleConstructorReturn(this, _getPrototypeOf(VideoShow).call(this, props));
-    _this.state = {
-      count: 1
-    };
-    return _this;
+    return _possibleConstructorReturn(this, _getPrototypeOf(VideoShow).call(this, props));
   }
 
   _createClass(VideoShow, [{
     key: "componentDidMount",
     value: function componentDidMount() {
-      var _this2 = this;
+      var _this = this;
 
       this.props.fetchVideos().then(function () {
-        return _this2.props.fetchVideo(_this2.props.match.params.videoId);
-      }).then();
-    }
-  }, {
-    key: "componentDidUpdate",
-    value: function componentDidUpdate(prevProps) {
-      var _this3 = this;
-
-      if (prevProps.match.params.videoId !== this.props.match.params.videoId) {
-        this.props.fetchVideos().then(function () {
-          return _this3.props.fetchVideo(_this3.props.match.params.videoId);
-        });
-      }
-
-      if (this.state.count < this.props.comments.length + 1) this.props.comments.forEach(function (comment) {
-        _this3.props.fetchUser(comment.user_id);
-
-        _this3.setState({
-          count: _this3.state.count + 1
-        });
-
-        console.log(_this3.state.count);
+        return _this.props.fetchVideo(_this.props.match.params.videoId);
       });
     }
   }, {
     key: "render",
     value: function render() {
-      var _this4 = this;
+      var _this2 = this;
 
       if (!this.props.video) {
         return null;
       }
 
-      var _this$props = this.props,
-          videos = _this$props.videos,
-          users = _this$props.users,
-          comments = _this$props.comments;
+      var videos = this.props.videos;
+      var comments = this.props.comments;
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         "class": "video-wrapper"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("video", {
@@ -2215,25 +2219,22 @@ function (_React$Component) {
       }, this.props.video.description), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         "class": "comments-wrapper"
       }, comments ? comments.map(function (comment) {
-        var user = users.filter(function (user) {
+        var user = _this2.props.video.comment_user.filter(function (user) {
           return user.id === comment.user_id;
         })[0];
+
         return user ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_comments_comment_index_item__WEBPACK_IMPORTED_MODULE_3__["default"], {
           comment: comment,
-          deleteComment: _this4.props.deleteComment,
-          currentUser: _this4.props.currentUser,
-          video: _this4.props.video,
+          deleteComment: _this2.props.deleteComment,
+          currentUser: _this2.props.currentUser,
+          video: _this2.props.video,
           user: user,
           key: comment.id,
-          updateComment: _this4.props.updateComment
+          updateComment: _this2.props.updateComment
         }) : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null);
       }) : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         "class": "no-comments"
-      }, " No Comments to show"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_comments_comment_form__WEBPACK_IMPORTED_MODULE_4__["default"], {
-        videoId: this.props.video.id,
-        userId: this.props.currentUser.id,
-        createComment: this.props.createComment
-      }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, " No Comments to show"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         "class": "up-next-bar"
       }, videos.map(function (video) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_sidebar_index_item__WEBPACK_IMPORTED_MODULE_2__["default"], {
@@ -2278,8 +2279,7 @@ var msp = function msp(state, ownProps) {
     video: state.entities.videos[ownProps.match.params.videoId],
     videos: Object.values(state.entities.videos),
     currentUser: user,
-    comments: Object.values(state.entities.comments),
-    users: Object.values(state.entities.users)
+    comments: Object.values(state.entities.comments)
   };
 };
 
@@ -2294,6 +2294,9 @@ var mdp = function mdp(dispatch) {
     fetchVideos: function fetchVideos() {
       return dispatch(Object(_actions_video_actions__WEBPACK_IMPORTED_MODULE_2__["fetchVideos"])());
     },
+    fetchComments: function fetchComments() {
+      return dispatch(Object(_actions_comment_actions__WEBPACK_IMPORTED_MODULE_4__["fetchComments"])());
+    },
     deleteVideo: function deleteVideo(videoId) {
       return dispatch(Object(_actions_video_actions__WEBPACK_IMPORTED_MODULE_2__["deleteVideo"])(videoId));
     },
@@ -2305,8 +2308,7 @@ var mdp = function mdp(dispatch) {
     },
     updateComment: function updateComment(comment) {
       return dispatch(Object(_actions_comment_actions__WEBPACK_IMPORTED_MODULE_4__["updateComment"])(comment));
-    } // fetchComments: ()=>dispatch(fetchComments())
-
+    }
   };
 };
 
@@ -2622,15 +2624,11 @@ var CommentsReducer = function CommentsReducer() {
   Object.freeze(state);
 
   switch (action.type) {
-    case _actions_comment_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_ALL_COMMENTS"]:
-      return action.comments;
-
     case _actions_comment_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_COMMENT"]:
       return Object.assign({}, state, _defineProperty({}, action.comment.id, action.comment));
 
     case _actions_comment_actions__WEBPACK_IMPORTED_MODULE_0__["REMOVE_COMMENT"]:
       var news = Object.assign({}, state);
-      debugger;
       delete news[action.commentId];
       return news;
 
@@ -2994,15 +2992,21 @@ var configureStore = function configureStore() {
 /*!*******************************************!*\
   !*** ./frontend/util/comment_api_util.js ***!
   \*******************************************/
-/*! exports provided: fetchComment, createComment, updateComment, deleteComment */
+/*! exports provided: fetchComments, fetchComment, createComment, updateComment, deleteComment */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchComments", function() { return fetchComments; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchComment", function() { return fetchComment; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "createComment", function() { return createComment; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "updateComment", function() { return updateComment; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "deleteComment", function() { return deleteComment; });
+var fetchComments = function fetchComments() {
+  return $.ajax({
+    url: "api/comments"
+  });
+};
 var fetchComment = function fetchComment(commentId) {
   return $.ajax({
     method: 'GET',
@@ -52761,7 +52765,7 @@ function warning(message) {
 /*!***************************************************************!*\
   !*** ./node_modules/react-router-dom/esm/react-router-dom.js ***!
   \***************************************************************/
-/*! exports provided: BrowserRouter, HashRouter, Link, NavLink, MemoryRouter, Prompt, Redirect, Route, Router, StaticRouter, Switch, __RouterContext, generatePath, matchPath, useHistory, useLocation, useParams, useRouteMatch, withRouter */
+/*! exports provided: MemoryRouter, Prompt, Redirect, Route, Router, StaticRouter, Switch, __RouterContext, generatePath, matchPath, useHistory, useLocation, useParams, useRouteMatch, withRouter, BrowserRouter, HashRouter, Link, NavLink */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";

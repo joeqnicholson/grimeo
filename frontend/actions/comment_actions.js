@@ -12,10 +12,7 @@ const removeComment=commentId=>({
     type: REMOVE_COMMENT,
     commentId
 })
-export const fetchComments=()=>(
-    CommentApiUtil.fetchComments()
-    .then(comments=>dispatch(fetchUsers(comments)))
-)
+
 export const fetchComment=comment=>dispatch=>(
     CommentApiUtil.fetchComment(comment)
     .then(comment=>dispatch(receiveComment(comment)))
