@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const SideBarIndexItem=props=>{
+
     return(
     <div class='sidebar-index-item'>
         <div class='image-container-sidebar'>

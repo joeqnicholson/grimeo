@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import SideBarIndexItem from './sidebar_index_item'
 import CommentIndexItem from '../comments/comment_index_item'
 import CommentForm from '../comments/comment_form'
+import LikeItem from '../likes/like_item_container'
 
 class VideoShow extends React.Component{
     constructor(props){
@@ -11,15 +12,12 @@ class VideoShow extends React.Component{
     componentDidMount(){
       this.props.fetchVideos().then(() => this.props.fetchVideo(this.props.match.params.videoId))
     }
-    
-
     render() {
         if(!this.props.video){
           return null
         }
         const { videos } = this.props;
         const { comments } = this.props;
-
         return (
           <div>
             <div class='video-wrapper'>
@@ -45,33 +43,41 @@ class VideoShow extends React.Component{
                     
                   </div>
                   <p class='vid-description'>{this.props.video.description}</p>
+                  <div className='vid-stats'>
+                    <div className='vid-stat-item'>
+                      <div className='vid-stat-icon'><i class="fas fa-play"></i></div>
+                      <div className='vid-stat-num'>{this.props.video.plays}</div>
+                    </div>
+                    <LikeItem/>
+                    <div className='vid-stat-item'>
+                      <i class="far fa-comment"></i>
+                      <div className='vid-stat-num'>{comments.length}</div>
+                    </div>
+
+                  </div>
       
                   <div class='comments-wrapper'>
                     {
                       comments ? 
                       comments.map(comment=>{
-                        let user = this.props.video.comment_user.filter(user=> user.id === comment.user_id)[0]
                         return(
-                          user ? 
                           <CommentIndexItem
                           comment={comment}
                           deleteComment = {this.props.deleteComment}
                           currentUser = {this.props.currentUser}
                           video = {this.props.video}
-                          user = {user}
+                          user = {this.props.users[comment.user_id]}
                           key={comment.id}
-                          updateComment = {this.props.updateComment}/> :
-                          <div></div>
+                          updateComment = {this.props.updateComment}/> 
                         )
-                          
                       })
                       :
                       <div class='no-comments'> No Comments to show</div>
                     }
-                    {/* <CommentForm
+                    <CommentForm
                     videoId ={this.props.video.id}
                     userId = {this.props.currentUser.id}
-                    createComment = {this.props.createComment}/> */}
+                    createComment = {this.props.createComment}/>
                   </div>
                 </div>
                 <div class='up-next-bar'>
