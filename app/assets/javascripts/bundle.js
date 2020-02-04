@@ -2511,13 +2511,14 @@ __webpack_require__.r(__webpack_exports__);
 var msp = function msp(state, ownProps) {
   var id = state.session.id;
   var user = state.entities.users[id];
+  debugger;
   return {
     video: state.entities.videos[ownProps.match.params.videoId],
     videos: Object.values(state.entities.videos).slice(0, 8).filter(function (video) {
       return video.id != ownProps.match.params.videoId;
     }),
     currentUser: user,
-    comments: Object.values(state.entities.comments),
+    comments: state.entities.comments ? Object.values(state.entities.comments) : [],
     users: state.entities.users,
     likes: state.entities.likes
   };
@@ -2879,7 +2880,11 @@ var CommentsReducer = function CommentsReducer() {
       return news;
 
     case _actions_video_actions__WEBPACK_IMPORTED_MODULE_1__["RECEIVE_VIDEO"]:
-      return action.video.comments;
+      if (action.video.comments) {
+        return action.video.comments;
+      } else {
+        return [];
+      }
 
     default:
       return state;
@@ -2977,7 +2982,11 @@ var likesReducer = function likesReducer() {
       return newState;
 
     case _actions_video_actions__WEBPACK_IMPORTED_MODULE_1__["RECEIVE_VIDEO"]:
-      return action.video.likes;
+      if (action.video.likes) {
+        return action.video.likes;
+      } else {
+        return [];
+      }
 
     default:
       return oldState;
