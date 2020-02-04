@@ -113,3 +113,29 @@
 .this-is-an-icon{
     font-size: 30px;
 }
+.vid-stats{
+    display: flex;
+    flex-direction: row;
+
+}
+.vid-stat-item{
+   padding: 10px;
+   display: flex;
+   justify-content: center;
+   flex-direction: row;
+   align-items: center;
+}
+
+.vid-stat-icon{
+    font-size: 18px;
+    background-color: transparent;
+    border: none;
+    padding-right: 6px;
+}
+.like-button{
+    font-size: 18px;
+    background-color: transparent;
+    border: none;
+    // padding-right: 4px;
+    color: white;
+}

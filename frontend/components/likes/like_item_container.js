@@ -10,10 +10,11 @@ const msp = (state, ownProps) => {
 
     const user = state.session.id || null;
 
-    debugger
+    
     const likes = state.entities.likes ? Object.values(state.entities.likes).map(like => like.user_id) : {};
 
     const video = state.entities.videos[ownProps.match.params.id];
+     
 
     return ({
         user,
@@ -25,7 +26,6 @@ const msp = (state, ownProps) => {
 const mdp = dispatch => {
 
     return ({
-
         deleteLike: (id) => dispatch(deleteLike(id)),
         createLike: (like) => dispatch(createLike(like))
     });

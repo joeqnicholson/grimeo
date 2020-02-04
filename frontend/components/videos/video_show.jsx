@@ -50,7 +50,7 @@ class VideoShow extends React.Component{
                     </div>
                     <LikeItem/>
                     <div className='vid-stat-item'>
-                      <i class="far fa-comment"></i>
+                    <div className='vid-stat-icon'><i class="far fa-comment"></i></div>
                       <div className='vid-stat-num'>{comments.length}</div>
                     </div>
 

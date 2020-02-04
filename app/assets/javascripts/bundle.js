@@ -1303,6 +1303,7 @@ var mdp = function mdp(dispatch) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _videos_user_video_container__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../videos/user_video_container */ "./frontend/components/videos/user_video_container.js");
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -1313,13 +1314,14 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
 function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
 
-function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
-
 function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
 
 
 
@@ -1329,55 +1331,60 @@ function (_React$Component) {
   _inherits(LikeItem, _React$Component);
 
   function LikeItem(props) {
-    var _this;
-
     _classCallCheck(this, LikeItem);
 
-    _this = _possibleConstructorReturn(this, _getPrototypeOf(LikeItem).call(this, props));
-    _this.updateLike = _this.updateLike.bind(_assertThisInitialized(_this));
-    return _this;
+    return _possibleConstructorReturn(this, _getPrototypeOf(LikeItem).call(this, props));
   }
 
   _createClass(LikeItem, [{
-    key: "updateLike",
-    value: function updateLike(e) {
-      var user = this.props.user;
-
-      if (this.props.likes.includes(user)) {
-        this.props.deleteLike(this.props.video.id);
-      } else if (user) {
-        this.props.createLike({
-          user_id: user,
-          video_id: this.props.video.id
-        });
-      }
-    }
-  }, {
     key: "render",
     value: function render() {
-      var _this2 = this;
+      var _this = this;
 
       if (!this.props.video) {
         return null;
       }
 
       var _this$props = this.props,
-          likes = _this$props.likes,
-          user = _this$props.user;
-      var heartType = likes.includes(user) ? 'fas fa-heart' : "far fa-heart";
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "vid-stat-item"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "vid-stat-icon"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-        onClick: function onClick() {
-          return _this2.updateLike();
-        }
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
-        "class": heartType
-      }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "vid-stat-num"
-      }, likes.length));
+          user = _this$props.user,
+          createLike = _this$props.createLike,
+          deleteLike = _this$props.deleteLike,
+          likes = _this$props.likes;
+
+      if (likes.includes(user)) {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "vid-stat-item"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "vid-stat-icon-like"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+          "class": "like-button",
+          onClick: function onClick() {
+            return deleteLike(_this.props.video.id);
+          }
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+          "class": "fas fa-heart"
+        }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "vid-stat-num"
+        }, Object.keys(likes).length));
+      } else {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "vid-stat-item"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "vid-stat-icon-like"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+          "class": "like-button",
+          onClick: function onClick() {
+            return createLike({
+              user_id: user,
+              video_id: _this.props.video.id
+            });
+          }
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+          "class": "far fa-heart"
+        }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "vid-stat-num"
+        }, Object.keys(likes).length));
+      }
     }
   }]);
 
@@ -1408,7 +1415,6 @@ __webpack_require__.r(__webpack_exports__);
 
 var msp = function msp(state, ownProps) {
   var user = state.session.id || null;
-  debugger;
   var likes = state.entities.likes ? Object.values(state.entities.likes).map(function (like) {
     return like.user_id;
   }) : {};
@@ -2438,9 +2444,11 @@ function (_React$Component) {
         className: "vid-stat-num"
       }, this.props.video.plays)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_likes_like_item_container__WEBPACK_IMPORTED_MODULE_5__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "vid-stat-item"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "vid-stat-icon"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
         "class": "far fa-comment"
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "vid-stat-num"
       }, comments.length))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         "class": "comments-wrapper"
@@ -2969,7 +2977,7 @@ var likesReducer = function likesReducer() {
       return newState;
 
     case _actions_video_actions__WEBPACK_IMPORTED_MODULE_1__["RECEIVE_VIDEO"]:
-      return action.video.video.likes;
+      return action.video.likes;
 
     default:
       return oldState;

@@ -1,34 +1,32 @@
 import React from 'react';
+import user_video_container from '../videos/user_video_container';
 
 
 class LikeItem extends React.Component{
     constructor(props){
         super(props)
-        this.updateLike = this.updateLike.bind(this)
-    }
-
-    updateLike(e) {
-        const {user} = this.props;
-        if (this.props.likes.includes(user)) {
-            this.props.deleteLike(this.props.video.id );
-        } else if (user) {
-            this.props.createLike({ user_id: user, video_id: this.props.video.id });
-        }
     }
 
     render(){
         if(!this.props.video){
             return null
         }
-        const { likes, user } = this.props;
-        const heartType = likes.includes(user) ? 'fas fa-heart' : "far fa-heart";
-    
-        return(
+        const { user, createLike, deleteLike, likes } = this.props;
+        if (likes.includes(user)){
+            return(
             <div className='vid-stat-item'>
-                <div className='vid-stat-icon'><button onClick={()=>this.updateLike()}><i class={heartType}></i></button></div>
-                <div className='vid-stat-num'>{likes.length}</div>
+                <div className='vid-stat-icon-like'><button class='like-button' onClick={()=>deleteLike(this.props.video.id)}><i class="fas fa-heart"></i></button></div>
+                <div className='vid-stat-num'>{Object.keys(likes).length}</div>
             </div>
-        )
+            )
+        }else{
+            return(
+            <div className='vid-stat-item'>
+                <div className='vid-stat-icon-like'><button class='like-button' onClick={()=>createLike({ user_id: user, video_id: this.props.video.id })}><i class="far fa-heart"></i></button></div>
+                <div className='vid-stat-num'>{Object.keys(likes).length}</div>
+            </div>
+            )
+        }
     }
 }
 

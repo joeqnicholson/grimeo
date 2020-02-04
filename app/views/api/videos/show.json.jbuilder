@@ -12,3 +12,7 @@ json.users do @video.comment_users.each do |user|
     json.set! user.id , user
     end
 end
+json.likes do @video.likes.each do |like|
+    json.set! like.id , like
+    end
+end

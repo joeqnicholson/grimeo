@@ -16,7 +16,7 @@ const likesReducer = (oldState = {}, action) => {
             delete newState[action.likeId];
             return newState;
         case RECEIVE_VIDEO:
-            return action.video.video.likes;
+            return action.video.likes;
         default:
             return oldState;
     }
