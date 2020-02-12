@@ -11,8 +11,10 @@ const CommentsReducer=(state={},action)=>{
             delete news[action.commentId];
             return news;
         case RECEIVE_VIDEO:
+            
             if(action.video.comments){
                 return action.video.comments;
+                // debugger 
             }else{
                 return []
             }

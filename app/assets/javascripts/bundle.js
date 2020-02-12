@@ -706,7 +706,7 @@ function (_React$Component) {
         "class": "name-and-buttons"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
         "class": "comment-username",
-        to: "/users/".concat(this.props.comment.user_id)
+        to: "/user/".concat(this.props.comment.user_id)
       }, this.props.user.username), this.props.comment.user_id === this.props.currentUser.id ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         "class": "logged-in-comment-buttons"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
@@ -1868,7 +1868,7 @@ var SideBarIndexItem = function SideBarIndexItem(props) {
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     "class": "image-container-sidebar"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-    to: "/watch/".concat(props.video.id)
+    to: "".concat(props.video.id)
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
     "class": "thumbnail-sidebar",
     src: props.video.thumbnailUrl
@@ -1878,7 +1878,7 @@ var SideBarIndexItem = function SideBarIndexItem(props) {
     "class": "video-index-title-sidebar"
   }, " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
     "class": "video-index-title-link-sidebar",
-    to: "/watch/".concat(props.video.id)
+    to: "".concat(props.video.id)
   }, props.video.title)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
     "class": "user-link",
     to: "/user/".concat(props.video.uploader.id)
@@ -1990,9 +1990,11 @@ function (_React$Component) {
         "class": "far fa-play-circle"
       }), " Videos"))))), userVideos.length === 0 ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         "class": "no-videos-wrapper"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, yourPage ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         "class": "no-videos-to-show"
       }, "You have no videos, but we can help you with that."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_video_upload_container__WEBPACK_IMPORTED_MODULE_3__["default"], null)) : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        "class": "no-videos-to-show"
+      }, "This user has no videos")) : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         "class": "video-index-master"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         "class": "feed-title-and-feed-container"
@@ -2876,7 +2878,7 @@ var CommentsReducer = function CommentsReducer() {
 
     case _actions_video_actions__WEBPACK_IMPORTED_MODULE_1__["RECEIVE_VIDEO"]:
       if (action.video.comments) {
-        return action.video.comments;
+        return action.video.comments; // debugger 
       } else {
         return [];
       }

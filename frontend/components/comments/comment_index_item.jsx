@@ -27,7 +27,7 @@ class CommentIndexItem extends React.Component{
             <div class='comment-index-user-icon-wrapper'><i class="far fa-user-circle comment-index-user-icon"></i></div>
             <div class='comment-index-name-and-body'>
                 <div class='name-and-buttons'>
-                <Link class='comment-username' to={`/users/${this.props.comment.user_id}`}>{this.props.user.username}</Link>
+                <Link class='comment-username' to={`/user/${this.props.comment.user_id}`}>{this.props.user.username}</Link>
                 {
                     this.props.comment.user_id === this.props.currentUser.id ?
                     <div class='logged-in-comment-buttons'>

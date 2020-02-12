@@ -41,8 +41,12 @@ class UserVideo extends React.Component{
                 {
                     userVideos.length === 0 ? 
                     <div class='no-videos-wrapper'>
-                        <div class='no-videos-to-show'>You have no videos, but we can help you with that.</div>
-                        <VideoUploadContainer/>
+                        {
+                            yourPage ? <div><div class='no-videos-to-show'>You have no videos, but we can help you with that.</div>
+                            <VideoUploadContainer/></div> :
+                            <div class='no-videos-to-show'>This user has no videos</div>
+                        }
+                        
                     </div> :
                 <div class='video-index-master'>
                     <div class='feed-title-and-feed-container'>
