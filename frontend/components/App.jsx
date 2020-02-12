@@ -25,7 +25,6 @@ const App = () => {
       </header>
       <Switch>
         <Route exact path="/" component={HomePageContainer}/>
-        <Route exact path="/watch" component={VideoIndexContainer}/>
         <Route exact path="/watch/:videoId" component={VideoShowContainer}/>
         <Route exact path="/upload" component={VideoUploadContainer}/>
         <Route exact path="/user/:userId" component={UserVideoContainer}/>

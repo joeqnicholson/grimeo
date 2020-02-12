@@ -7,7 +7,7 @@ const VideosReducer=(state={}, action)=>{
         case RECEIVE_ALL_VIDEOS:
             return merge({}, state, action.videos)
           case RECEIVE_VIDEO:
-            return Object.assign({}, state, { [action.video.id]: action.video.video })
+            return Object.assign({}, state, { [action.video.video.id]: action.video.video })
           case RECEIVE_USER:
             return Object.assign({}, state, action.videos)
           case REMOVE_VIDEO:

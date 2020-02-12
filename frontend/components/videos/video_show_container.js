@@ -8,8 +8,6 @@ import { deleteLike, createLike } from '../../actions/like_actions';
 const msp=(state, ownProps)=>{
     const id = state.session.id;
     const user = state.entities.users[id];
-
-    debugger
     return({
         video: state.entities.videos[ownProps.match.params.videoId],
         videos: Object.values(state.entities.videos).slice(0,8).filter(video => video.id != ownProps.match.params.videoId),

@@ -491,10 +491,6 @@ var App = function App() {
     component: _greeting_homepage_container__WEBPACK_IMPORTED_MODULE_8__["default"]
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_11__["Route"], {
     exact: true,
-    path: "/watch",
-    component: _videos_video_index_container__WEBPACK_IMPORTED_MODULE_3__["default"]
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_11__["Route"], {
-    exact: true,
     path: "/watch/:videoId",
     component: _videos_video_show_container__WEBPACK_IMPORTED_MODULE_4__["default"]
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_11__["Route"], {
@@ -1351,22 +1347,7 @@ function (_React$Component) {
           deleteLike = _this$props.deleteLike,
           likes = _this$props.likes;
 
-      if (likes.includes(user)) {
-        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-          className: "vid-stat-item"
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-          className: "vid-stat-icon-like"
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-          "class": "like-button",
-          onClick: function onClick() {
-            return deleteLike(_this.props.video.id);
-          }
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
-          "class": "fas fa-heart"
-        }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-          className: "vid-stat-num"
-        }, Object.keys(likes).length));
-      } else {
+      if (!likes.includes(user)) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "vid-stat-item"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -1381,6 +1362,21 @@ function (_React$Component) {
           }
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
           "class": "far fa-heart"
+        }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "vid-stat-num"
+        }, Object.keys(likes).length));
+      } else {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "vid-stat-item"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "vid-stat-icon-like"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+          "class": "like-button",
+          onClick: function onClick() {
+            return deleteLike(_this.props.video.id);
+          }
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+          "class": "fas fa-heart"
         }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "vid-stat-num"
         }, Object.keys(likes).length));
@@ -1417,8 +1413,8 @@ var msp = function msp(state, ownProps) {
   var user = state.session.id || null;
   var likes = state.entities.likes ? Object.values(state.entities.likes).map(function (like) {
     return like.user_id;
-  }) : {};
-  var video = state.entities.videos[ownProps.match.params.id];
+  }) : [];
+  var video = state.entities.videos[ownProps.match.params.videoId];
   return {
     user: user,
     video: video,
@@ -2511,7 +2507,6 @@ __webpack_require__.r(__webpack_exports__);
 var msp = function msp(state, ownProps) {
   var id = state.session.id;
   var user = state.entities.users[id];
-  debugger;
   return {
     video: state.entities.videos[ownProps.match.params.videoId],
     videos: Object.values(state.entities.videos).slice(0, 8).filter(function (video) {
@@ -3251,7 +3246,7 @@ var VideosReducer = function VideosReducer() {
       return Object(lodash__WEBPACK_IMPORTED_MODULE_2__["merge"])({}, state, action.videos);
 
     case _actions_video_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_VIDEO"]:
-      return Object.assign({}, state, _defineProperty({}, action.video.id, action.video.video));
+      return Object.assign({}, state, _defineProperty({}, action.video.video.id, action.video.video));
 
     case _actions_user_actions__WEBPACK_IMPORTED_MODULE_1__["RECEIVE_USER"]:
       return Object.assign({}, state, action.videos);
@@ -56596,7 +56591,7 @@ function warning(message) {
 /*!***************************************************************!*\
   !*** ./node_modules/react-router-dom/esm/react-router-dom.js ***!
   \***************************************************************/
-/*! exports provided: BrowserRouter, HashRouter, Link, NavLink, MemoryRouter, Prompt, Redirect, Route, Router, StaticRouter, Switch, __RouterContext, generatePath, matchPath, useHistory, useLocation, useParams, useRouteMatch, withRouter */
+/*! exports provided: MemoryRouter, Prompt, Redirect, Route, Router, StaticRouter, Switch, __RouterContext, generatePath, matchPath, useHistory, useLocation, useParams, useRouteMatch, withRouter, BrowserRouter, HashRouter, Link, NavLink */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";

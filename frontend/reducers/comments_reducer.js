@@ -16,7 +16,6 @@ const CommentsReducer=(state={},action)=>{
             }else{
                 return []
             }
-           
         default:
             return state;
     }

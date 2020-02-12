@@ -9,13 +9,11 @@ import {withRouter} from 'react-router-dom';
 const msp = (state, ownProps) => {
 
     const user = state.session.id || null;
-
     
-    const likes = state.entities.likes ? Object.values(state.entities.likes).map(like => like.user_id) : {};
+    const likes = state.entities.likes ? Object.values(state.entities.likes).map(like => like.user_id) : [];
 
-    const video = state.entities.videos[ownProps.match.params.id];
+    const video = state.entities.videos[ownProps.match.params.videoId];
      
-
     return ({
         user,
         video,
