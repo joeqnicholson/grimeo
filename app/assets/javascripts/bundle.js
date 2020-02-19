@@ -2389,9 +2389,18 @@ function (_React$Component) {
       });
     }
   }, {
+    key: "componentDidUpdate",
+    value: function componentDidUpdate() {
+      var _this2 = this;
+
+      this.props.fetchVideos().then(function () {
+        return _this2.props.fetchVideo(_this2.props.match.params.videoId);
+      });
+    }
+  }, {
     key: "render",
     value: function render() {
-      var _this2 = this;
+      var _this3 = this;
 
       if (!this.props.video) {
         return null;
@@ -2453,12 +2462,12 @@ function (_React$Component) {
       }, comments ? comments.map(function (comment) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_comments_comment_index_item__WEBPACK_IMPORTED_MODULE_3__["default"], {
           comment: comment,
-          deleteComment: _this2.props.deleteComment,
-          currentUser: _this2.props.currentUser,
-          video: _this2.props.video,
-          user: _this2.props.users[comment.user_id],
+          deleteComment: _this3.props.deleteComment,
+          currentUser: _this3.props.currentUser,
+          video: _this3.props.video,
+          user: _this3.props.users[comment.user_id],
           key: comment.id,
-          updateComment: _this2.props.updateComment
+          updateComment: _this3.props.updateComment
         });
       }) : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         "class": "no-comments"
